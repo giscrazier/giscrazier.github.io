@@ -3,19 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>works | GISDOG&#39;s Blog</title>
+  <title>webstorm 中配置supervisor或者nodemon来发布Node服务 | GISDOG&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习总结 思考感悟 知识管理">
-<meta property="og:type" content="website">
-<meta property="og:title" content="works">
-<meta property="og:url" content="http://yoursite.com/works/index.html">
+  <meta name="description" content="在我们开发php，java等web项目的时候，修改了项目代码，服务器都会自动重启，让我们的改动生效，但是node并不会这样，必须手动去重启一下，这样很烦人的啊，很浪费时间，于是就有大神开发了自动重启的工具——nodemon或者supervisor，很简单的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webstorm 中配置supervisor或者nodemon来发布Node服务">
+<meta property="og:url" content="http://yoursite.com/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/index.html">
 <meta property="og:site_name" content="GISDOG&#39;s Blog">
-<meta property="og:description" content="学习总结 思考感悟 知识管理">
+<meta property="og:description" content="在我们开发php，java等web项目的时候，修改了项目代码，服务器都会自动重启，让我们的改动生效，但是node并不会这样，必须手动去重启一下，这样很烦人的啊，很浪费时间，于是就有大神开发了自动重启的工具——nodemon或者supervisor，很简单的。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-25T14:25:44.426Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/giscrazier/giscrazier.github.io/master/resoures/images/webstormconfigsupervisor.png">
+<meta property="og:updated_time" content="2017-12-12T08:26:54.369Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="works">
-<meta name="twitter:description" content="学习总结 思考感悟 知识管理">
+<meta name="twitter:title" content="webstorm 中配置supervisor或者nodemon来发布Node服务">
+<meta name="twitter:description" content="在我们开发php，java等web项目的时候，修改了项目代码，服务器都会自动重启，让我们的改动生效，但是node并不会这样，必须手动去重启一下，这样很烦人的啊，很浪费时间，于是就有大神开发了自动重启的工具——nodemon或者supervisor，很简单的。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/giscrazier/giscrazier.github.io/master/resoures/images/webstormconfigsupervisor.png">
   
     <link rel="alternative" href="/atom.xml" title="GISDOG&#39;s Blog" type="application/atom+xml">
   
@@ -41,7 +43,7 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -225,11 +227,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-webstorm-中配置supervisor或者nodemon来发布Node服务" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/works/index.html" class="article-date">
-      <time datetime="2017-11-25T14:25:44.000Z" itemprop="datePublished">2017-11-25</time>
+      <a href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/" class="article-date">
+      <time datetime="2017-12-12T08:18:34.000Z" itemprop="datePublished">2017-12-12</time>
 </a>
     </div>
   
@@ -242,7 +244,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      works
+      webstorm 中配置supervisor或者nodemon来发布Node服务
     </h1>
   
 
@@ -259,42 +261,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta {
-        display: none;
-    }
-    #container .article .article-title {
-        padding-right: 0;
-    }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 1.6em
-    }
-    .article-meta {
-        display: none;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    #container .article-info-post.article-info {
-      display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
+        <p>在我们开发<code>php</code>，<code>java</code>等<code>web</code>项目的时候，修改了项目代码，服务器都会自动重启，让我们的改动生效，但是node并不会这样，必须手动去重启一下，这样很烦人的啊，很浪费时间，于是就有大神开发了自动重启的工具——<code>nodemon</code>或者<code>supervisor</code>，很简单的。<br><a id="more"></a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> -g nodemon  </span><br><span class="line">//或者</span><br><span class="line">npm <span class="keyword">install</span> -g supervisor</span><br></pre></td></tr></table></figure>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>打开<code>Edit Configurations</code>：<br><img src="https://raw.githubusercontent.com/giscrazier/giscrazier.github.io/master/resoures/images/webstormconfigsupervisor.png" alt="Edit Configurations"><br>配置<code>Node interpreter</code>为：<br><a href="C:%5CUsers%5Cadmin%5CAppData%5CRoaming%5Cnpm%5Cnode-supervisor.cmd" target="_blank" rel="noopener">C:\Users\admin\AppData\Roaming\npm\node-supervisor.cmd</a><br>或者<br><a href="C:%5CUsers%5Cadmin%5CAppData%5CRoaming%5Cnpm%5Cnodemon.cmd" target="_blank" rel="noopener">C:\Users\admin\AppData\Roaming\npm\nodemon.cmd</a><br>保存即可。</p>
 
-
-          
-        
       
       
         <div class="page-reward">
@@ -348,10 +318,76 @@
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/">webstorm 中配置supervisor或者nodemon来发布Node服务</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 浦深 的个人博客">浦深</a></p>
+        <p><span>发布时间:</span>2017年12月12日 - 16时18分</p>
+        <p><span>最后更新:</span>2017年12月12日 - 16时26分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/" title="webstorm 中配置supervisor或者nodemon来发布Node服务">http://yoursite.com/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/　　作者: 浦深" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/12/13/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          hello world
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/05/koa2-webpack-热更新/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">koa2 + webpack 热更新</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x914D;&#x7F6E;" class="headerlink" title="&#x914D;&#x7F6E;"></a>&#x914D;&#x7F6E;</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
 
 
 
@@ -387,6 +423,39 @@
     
 
 
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/12/13/hello-world/" title="上一篇: hello world">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/12/05/koa2-webpack-热更新/" title="下一篇: koa2 + webpack 热更新">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/13/hello-world/">hello world</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/">webstorm 中配置supervisor或者nodemon来发布Node服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/koa2-webpack-热更新/">koa2 + webpack 热更新</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/玩转-React-服务器端渲染/">玩转 React 服务器端渲染</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/03/JavaScript获取页面宽度高度大全/">JavaScript获取页面宽度高度大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/01/koa-router-学习笔记/">koa-router 学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/React-Router：从V2-V3迁移到V4/">React Router：从V2/V3迁移到V4</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/react-router4升级踩坑/">react-router4升级踩坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/Redux/">Redux</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/fecth-使用说明/">fecth 使用说明</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
 
 

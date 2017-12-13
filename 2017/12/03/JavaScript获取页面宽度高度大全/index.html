@@ -3,19 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>works | GISDOG&#39;s Blog</title>
+  <title>JavaScript获取页面宽度高度大全 | GISDOG&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习总结 思考感悟 知识管理">
-<meta property="og:type" content="website">
-<meta property="og:title" content="works">
-<meta property="og:url" content="http://yoursite.com/works/index.html">
+  <meta name="description" content="document.body.clientWidth ==&amp;gt; BODY对象宽度document.body.clientHeight ==&amp;gt; BODY对象高度document.documentElement.clientWidth ==&amp;gt; 可见区域宽度document.documentElement.clientHeight ==&amp;gt; 可见区域高度">
+<meta name="keywords" content="DOM,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript获取页面宽度高度大全">
+<meta property="og:url" content="http://yoursite.com/2017/12/03/JavaScript获取页面宽度高度大全/index.html">
 <meta property="og:site_name" content="GISDOG&#39;s Blog">
-<meta property="og:description" content="学习总结 思考感悟 知识管理">
+<meta property="og:description" content="document.body.clientWidth ==&amp;gt; BODY对象宽度document.body.clientHeight ==&amp;gt; BODY对象高度document.documentElement.clientWidth ==&amp;gt; 可见区域宽度document.documentElement.clientHeight ==&amp;gt; 可见区域高度">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-25T14:25:44.426Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/giscrazier/giscrazier.github.io/master/resoures/images/jswidth.jpg">
+<meta property="og:updated_time" content="2017-12-03T03:29:11.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="works">
-<meta name="twitter:description" content="学习总结 思考感悟 知识管理">
+<meta name="twitter:title" content="JavaScript获取页面宽度高度大全">
+<meta name="twitter:description" content="document.body.clientWidth ==&amp;gt; BODY对象宽度document.body.clientHeight ==&amp;gt; BODY对象高度document.documentElement.clientWidth ==&amp;gt; 可见区域宽度document.documentElement.clientHeight ==&amp;gt; 可见区域高度">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/giscrazier/giscrazier.github.io/master/resoures/images/jswidth.jpg">
   
     <link rel="alternative" href="/atom.xml" title="GISDOG&#39;s Blog" type="application/atom+xml">
   
@@ -41,7 +44,7 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -225,11 +228,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JavaScript获取页面宽度高度大全" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/works/index.html" class="article-date">
-      <time datetime="2017-11-25T14:25:44.000Z" itemprop="datePublished">2017-11-25</time>
+      <a href="/2017/12/03/JavaScript获取页面宽度高度大全/" class="article-date">
+      <time datetime="2017-12-03T03:02:44.000Z" itemprop="datePublished">2017-12-03</time>
 </a>
     </div>
   
@@ -242,7 +245,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      works
+      JavaScript获取页面宽度高度大全
     </h1>
   
 
@@ -250,8 +253,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/DOM/">DOM</a><a class="article-category-link" href="/categories/DOM/javascript/">javascript</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -259,42 +270,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta {
-        display: none;
-    }
-    #container .article .article-title {
-        padding-right: 0;
-    }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 1.6em
-    }
-    .article-meta {
-        display: none;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    #container .article-info-post.article-info {
-      display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
+        <p><code>document.body.clientWidth</code> ==&gt; BODY对象宽度<br><code>document.body.clientHeight</code> ==&gt; BODY对象高度<br><code>document.documentElement.clientWidth</code> ==&gt; 可见区域宽度<br><code>document.documentElement.clientHeight</code> ==&gt; 可见区域高度<br><a id="more"></a></p>
+<p>网页可见区域宽： <code>document.body.clientWidth</code><br>网页可见区域高： <code>document.body.clientHeight</code><br>网页可见区域宽： <code>document.body.offsetWidth</code> (包括边线的宽)<br>网页可见区域高： <code>document.body.offsetHeight</code> (包括边线的高)  </p>
+<p>网页正文全文宽： <code>document.body.scrollWidth</code><br>网页正文全文高： <code>document.body.scrollHeight</code>  </p>
+<p>网页被卷去的高： <code>document.body.scrollTop</code><br>网页被卷去的左： <code>document.body.scrollLeft</code>  </p>
+<p>网页正文部分上： <code>window.screenTop</code><br>网页正文部分左： <code>window.screenLeft</code>  </p>
+<p>屏幕分辨率的高： <code>window.screen.height</code><br>屏幕分辨率的宽： <code>window.screen.width</code><br>屏幕可用工作区高度： <code>window.screen.availHeight</code><br>屏幕可用工作区宽度： <code>window.screen.availWidth</code>  </p>
+<p>// 部分jQuery函数  </p>
+<p><code>$(window).height()</code>//浏览器时下窗口可视区域高度   </p>
+<p><code>$(document).height()</code> //浏览器时下窗口文档的高度<br><code>$(document.body).height()</code>　　　　　　//浏览器时下窗口文档body的高度<br><code>$(document.body).outerHeight(true)</code>　//浏览器时下窗口文档body的总高度 包括border padding margin<br><code>$(window).width()</code> 　//浏览器时下窗口可视区域宽度<br><code>$(document).width()</code> //浏览器时下窗口文档对于象宽度<br><code>$(document.body).width()</code>　　　　　　//浏览器时下窗口文档body的高度<br><code>$(document.body).outerWidth(true)</code>　//浏览器时下窗口文档body的总宽度 包括border padding  </p>
+<p>HTML精确定位：<code>scrollLeft</code>,<code>scrollWidth</code>,<code>clientWidth</code>,<code>offsetWidth</code><br><code>scrollHeight</code>: 获取对象的滚动高度。<br><code>scrollLeft</code>:设置或获取位于对象左边界和窗口中目前可见内容的最左端之间的距离<br><code>scrollTop</code>:设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离<br><code>scrollWidth</code>:获取对象的滚动宽度   </p>
+<p><code>offsetHeight</code>:获取对象相对于版面或由父坐标 offsetParent 属性指定的父坐标的高度<br><code>offsetLeft</code>:获取对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置<br><code>offsetTop</code>:获取对象相对于版面或由 offsetTop 属性指定的父坐标的计算顶端位置   </p>
+<p><code>event.clientX</code> 相对文档的水平座标<br><code>event.clientY</code> 相对文档的垂直座标   </p>
+<p><code>event.offsetX</code> 相对容器的水平坐标<br><code>event.offsetY</code> 相对容器的垂直坐标   </p>
+<p><code>document.documentElement.scrollTop</code> 垂直方向滚动的值<br><code>event.clientX+document.documentElement.scrollTop</code> 相对文档的水平座标+垂直方向滚动的量  </p>
+<p><img src="https://raw.githubusercontent.com/giscrazier/giscrazier.github.io/master/resoures/images/jswidth.jpg" alt="页面各种宽高"></p>
 
-
-          
-        
       
       
         <div class="page-reward">
@@ -348,10 +339,76 @@
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/12/03/JavaScript获取页面宽度高度大全/">JavaScript获取页面宽度高度大全</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 浦深 的个人博客">浦深</a></p>
+        <p><span>发布时间:</span>2017年12月03日 - 11时02分</p>
+        <p><span>最后更新:</span>2017年12月03日 - 11时29分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/12/03/JavaScript获取页面宽度高度大全/" title="JavaScript获取页面宽度高度大全">http://yoursite.com/2017/12/03/JavaScript获取页面宽度高度大全/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/03/JavaScript获取页面宽度高度大全/　　作者: 浦深" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/12/04/玩转-React-服务器端渲染/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          玩转 React 服务器端渲染
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/01/koa-router-学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">koa-router 学习笔记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
 
 
 
@@ -387,6 +444,39 @@
     
 
 
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/12/04/玩转-React-服务器端渲染/" title="上一篇: 玩转 React 服务器端渲染">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/12/01/koa-router-学习笔记/" title="下一篇: koa-router 学习笔记">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/13/hello-world/">hello world</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/">webstorm 中配置supervisor或者nodemon来发布Node服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/koa2-webpack-热更新/">koa2 + webpack 热更新</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/玩转-React-服务器端渲染/">玩转 React 服务器端渲染</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/03/JavaScript获取页面宽度高度大全/">JavaScript获取页面宽度高度大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/01/koa-router-学习笔记/">koa-router 学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/React-Router：从V2-V3迁移到V4/">React Router：从V2/V3迁移到V4</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/react-router4升级踩坑/">react-router4升级踩坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/Redux/">Redux</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/fecth-使用说明/">fecth 使用说明</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
 
 

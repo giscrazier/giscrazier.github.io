@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hello world | GISDOG&#39;s Blog</title>
+  <title>koa2 + webpack 热更新 | GISDOG&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta name="keywords" content="ʾ��">
+  <meta name="description" content="需要的包 webpack:用于构建项目 webpack-dev-middleware:用于处理静态文件 webpack-hot-middleware:用于实现无刷新更新">
+<meta name="keywords" content="koa2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello world">
-<meta property="og:url" content="http://yoursite.com/2017/12/13/hello-world/index.html">
+<meta property="og:title" content="koa2 + webpack 热更新">
+<meta property="og:url" content="http://yoursite.com/2017/12/05/koa2-webpack-热更新/index.html">
 <meta property="og:site_name" content="GISDOG&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="需要的包 webpack:用于构建项目 webpack-dev-middleware:用于处理静态文件 webpack-hot-middleware:用于实现无刷新更新">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-13T14:50:58.795Z">
+<meta property="og:updated_time" content="2017-12-05T05:38:44.642Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello world">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="koa2 + webpack 热更新">
+<meta name="twitter:description" content="需要的包 webpack:用于构建项目 webpack-dev-middleware:用于处理静态文件 webpack-hot-middleware:用于实现无刷新更新">
   
     <link rel="alternative" href="/atom.xml" title="GISDOG&#39;s Blog" type="application/atom+xml">
   
@@ -226,11 +226,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-koa2-webpack-热更新" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/12/13/hello-world/" class="article-date">
-      <time datetime="2017-12-13T14:49:04.000Z" itemprop="datePublished">2017-12-13</time>
+      <a href="/2017/12/05/koa2-webpack-热更新/" class="article-date">
+      <time datetime="2017-12-05T03:33:38.000Z" itemprop="datePublished">2017-12-05</time>
 </a>
     </div>
   
@@ -243,7 +243,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hello world
+      koa2 + webpack 热更新
     </h1>
   
 
@@ -251,10 +251,14 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/koa2/">koa2</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ʾ��/">ʾ��</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/koa2/">koa2</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -264,16 +268,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
- <a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="需要的包"><a href="#需要的包" class="headerlink" title="需要的包"></a>需要的包</h1><ul>
+<li><code>webpack</code>:用于构建项目</li>
+<li><code>webpack-dev-middleware</code>:用于处理静态文件</li>
+<li><code>webpack-hot-middleware</code>:用于实现无刷新更新</li>
+</ul>
+<a id="more"></a>
+<h1 id="webpack-config配置"><a href="#webpack-config配置" class="headerlink" title="webpack.config配置"></a>webpack.config配置</h1><ul>
+<li><code>entry</code>配置<code>webpack-hot-middleware</code>脚本</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">entry: &#123;</span><br><span class="line">  app:[<span class="string">"webpack-hot-middleware/client?noInfo=true&amp;reload=true"</span>,<span class="string">"./src/module1.js"</span>,<span class="string">"./src/module2.js"</span>],</span><br><span class="line">  app2:[<span class="string">"webpack-hot-middleware/client?noInfo=true&amp;reload=true"</span>,<span class="string">"./src/module2.js"</span>,<span class="string">"./src/module3.js"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>plugins</code>配置<code>HotModuleReplacementPlugin</code>插件用于热更新</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">        <span class="keyword">new</span> webpack.HotModuleReplacementPlugin()</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+<h1 id="koa2支持的中间件webpack-dev-middleware的实现"><a href="#koa2支持的中间件webpack-dev-middleware的实现" class="headerlink" title="koa2支持的中间件webpack-dev-middleware的实现"></a>koa2支持的中间件webpack-dev-middleware的实现</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// devMiddleware.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> webpackDev  = <span class="built_in">require</span>(<span class="string">'webpack-dev-middleware'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> devMiddleware = <span class="function">(<span class="params">compiler, opts</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> middleware = webpackDev(compiler, opts)</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">        <span class="keyword">await</span> middleware(ctx.req, &#123;</span><br><span class="line">            end: <span class="function">(<span class="params">content</span>) =&gt;</span> &#123;</span><br><span class="line">                ctx.body = content</span><br><span class="line">            &#125;,</span><br><span class="line">            setHeader: <span class="function">(<span class="params">name, value</span>) =&gt;</span> &#123;</span><br><span class="line">                ctx.set(name, value)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, next)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports=devMiddleware;</span><br></pre></td></tr></table></figure>
+<h1 id="koa2支持的中间件webpack-hot-middleware的实现"><a href="#koa2支持的中间件webpack-hot-middleware的实现" class="headerlink" title="koa2支持的中间件webpack-hot-middleware的实现"></a>koa2支持的中间件webpack-hot-middleware的实现</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hotMiddleware.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> webpackHot = <span class="built_in">require</span>(<span class="string">'webpack-hot-middleware'</span>)</span><br><span class="line"><span class="keyword">const</span> PassThrough = <span class="built_in">require</span>(<span class="string">'stream'</span>).PassThrough;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> hotMiddleware = <span class="function">(<span class="params">compiler, opts</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> middleware = webpackHot(compiler, opts);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> stream = <span class="keyword">new</span> PassThrough()</span><br><span class="line">        ctx.body = stream</span><br><span class="line">        <span class="keyword">await</span> middleware(ctx.req, &#123;</span><br><span class="line">            write: stream.write.bind(stream),</span><br><span class="line">            writeHead: <span class="function">(<span class="params">status, headers</span>) =&gt;</span> &#123;</span><br><span class="line">                ctx.status = status</span><br><span class="line">                ctx.set(headers)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, next)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = hotMiddleware;</span><br></pre></td></tr></table></figure>
+<h1 id="koa2实现添加中间件"><a href="#koa2实现添加中间件" class="headerlink" title="koa2实现添加中间件"></a>koa2实现添加中间件</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="keyword">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"><span class="keyword">const</span> serve = <span class="keyword">require</span>(<span class="string">'koa-static'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="keyword">require</span>(<span class="string">"webpack"</span>);</span><br><span class="line"><span class="keyword">const</span> webpackConfig = <span class="keyword">require</span>(<span class="string">"./webpack.config"</span>);</span><br><span class="line"><span class="keyword">const</span> devMiddleware = <span class="keyword">require</span>(<span class="string">"./devMiddleware"</span>);</span><br><span class="line"><span class="keyword">const</span> hotMiddleware = <span class="keyword">require</span>(<span class="string">'./hotMiddleware'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> compiler = webpack(webpackConfig);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.<span class="keyword">use</span>(devMiddleware(compiler));</span><br><span class="line">app.<span class="keyword">use</span>(hotMiddleware(compiler));</span><br><span class="line"></span><br><span class="line">app.<span class="keyword">use</span>(serve(__dirname + <span class="string">"/dist/"</span>, &#123;extensions: [<span class="string">'html'</span>]&#125;));</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">'app listen at 3000'</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h1><p>版本不同可能会导致乱七八糟的问题，所以给上能用的版本。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"demo"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="attr">"repository"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"MIT"</span>,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"html-webpack-plugin"</span>: <span class="string">"^2.29.0"</span>,</span><br><span class="line">    <span class="attr">"koa"</span>: <span class="string">"^2.3.0"</span>,</span><br><span class="line">    <span class="attr">"koa-static"</span>: <span class="string">"^4.0.1"</span>,</span><br><span class="line">    <span class="attr">"webpack"</span>: <span class="string">"^3.3.0"</span>,</span><br><span class="line">    <span class="attr">"webpack-dev-middleware"</span>: <span class="string">"^1.11.0"</span>,</span><br><span class="line">    <span class="attr">"webpack-hot-middleware"</span>: <span class="string">"^2.18.2"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
       
@@ -329,13 +342,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/12/13/hello-world/">hello world</a></p>
+        <p><span>本文标题:</span><a href="/2017/12/05/koa2-webpack-热更新/">koa2 + webpack 热更新</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 浦深 的个人博客">浦深</a></p>
-        <p><span>发布时间:</span>2017年12月13日 - 22时49分</p>
-        <p><span>最后更新:</span>2017年12月13日 - 22时50分</p>
+        <p><span>发布时间:</span>2017年12月05日 - 11时33分</p>
+        <p><span>最后更新:</span>2017年12月05日 - 13时38分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/12/13/hello-world/" title="hello world">http://yoursite.com/2017/12/13/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/13/hello-world/　　作者: 浦深" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/12/05/koa2-webpack-热更新/" title="koa2 + webpack 热更新">http://yoursite.com/2017/12/05/koa2-webpack-热更新/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/05/koa2-webpack-热更新/　　作者: 浦深" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -348,9 +361,18 @@
 
 <nav id="article-nav">
   
+    <a href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          webstorm 中配置supervisor或者nodemon来发布Node服务
+        
+      </div>
+    </a>
   
-    <a href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">webstorm 中配置supervisor或者nodemon来发布Node服务</div>
+  
+    <a href="/2017/12/04/玩转-React-服务器端渲染/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">玩转 React 服务器端渲染</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -361,7 +383,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#需要的包"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x9700;&#x8981;&#x7684;&#x5305;" class="headerlink" title="&#x9700;&#x8981;&#x7684;&#x5305;"></a>&#x9700;&#x8981;&#x7684;&#x5305;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack-config配置"><span class="toc-number">2.</span> <span class="toc-text"><a href="#webpack-config&#x914D;&#x7F6E;" class="headerlink" title="webpack.config&#x914D;&#x7F6E;"></a>webpack.config&#x914D;&#x7F6E;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#koa2支持的中间件webpack-dev-middleware的实现"><span class="toc-number">3.</span> <span class="toc-text"><a href="#koa2&#x652F;&#x6301;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;webpack-dev-middleware&#x7684;&#x5B9E;&#x73B0;" class="headerlink" title="koa2&#x652F;&#x6301;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;webpack-dev-middleware&#x7684;&#x5B9E;&#x73B0;"></a>koa2&#x652F;&#x6301;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;webpack-dev-middleware&#x7684;&#x5B9E;&#x73B0;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#koa2支持的中间件webpack-hot-middleware的实现"><span class="toc-number">4.</span> <span class="toc-text"><a href="#koa2&#x652F;&#x6301;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;webpack-hot-middleware&#x7684;&#x5B9E;&#x73B0;" class="headerlink" title="koa2&#x652F;&#x6301;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;webpack-hot-middleware&#x7684;&#x5B9E;&#x73B0;"></a>koa2&#x652F;&#x6301;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;webpack-hot-middleware&#x7684;&#x5B9E;&#x73B0;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#koa2实现添加中间件"><span class="toc-number">5.</span> <span class="toc-text"><a href="#koa2&#x5B9E;&#x73B0;&#x6DFB;&#x52A0;&#x4E2D;&#x95F4;&#x4EF6;" class="headerlink" title="koa2&#x5B9E;&#x73B0;&#x6DFB;&#x52A0;&#x4E2D;&#x95F4;&#x4EF6;"></a>koa2&#x5B9E;&#x73B0;&#x6DFB;&#x52A0;&#x4E2D;&#x95F4;&#x4EF6;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#package-json"><span class="toc-number">6.</span> <span class="toc-text"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -427,11 +449,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/" title="上一篇: webstorm 中配置supervisor或者nodemon来发布Node服务">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/" title="下一篇: webstorm 中配置supervisor或者nodemon来发布Node服务">
+            <a href="/2017/12/04/玩转-React-服务器端渲染/" title="下一篇: 玩转 React 服务器端渲染">
                 <i class="fa fa-angle-right"></i>
             </a>
         
