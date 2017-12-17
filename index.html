@@ -151,7 +151,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/PowerDesigner/" style="font-size: 10px;">PowerDesigner</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/create-user/" style="font-size: 10px;">create user</a> <a href="/tags/fecth/" style="font-size: 10px;">fecth</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/koa/" style="font-size: 10px;">koa</a> <a href="/tags/koa-router/" style="font-size: 10px;">koa-router</a> <a href="/tags/koa2/" style="font-size: 10px;">koa2</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 20px;">react-router</a> <a href="/tags/react-router-dom/" style="font-size: 20px;">react-router-dom</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/服务端渲染/" style="font-size: 10px;">服务端渲染</a>
+                        <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/PowerDesigner/" style="font-size: 10px;">PowerDesigner</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/create-user/" style="font-size: 10px;">create user</a> <a href="/tags/fecth/" style="font-size: 10px;">fecth</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/koa/" style="font-size: 10px;">koa</a> <a href="/tags/koa-router/" style="font-size: 10px;">koa-router</a> <a href="/tags/koa2/" style="font-size: 10px;">koa2</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 20px;">react-router</a> <a href="/tags/react-router-dom/" style="font-size: 20px;">react-router-dom</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/服务端渲染/" style="font-size: 10px;">服务端渲染</a>
                     </div>
                 </section>
                 
@@ -228,6 +228,93 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Maven-配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/17/Maven-配置/" class="article-date">
+      <time datetime="2017-12-17T15:18:43.000Z" itemprop="datePublished">2017-12-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/17/Maven-配置/">Maven 配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <a id="more"></a>
+<h1 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a>Maven 配置</h1><p><img src="https://giscrazier.github.io/resoures/images/maven_cfg/m2_home.jpg" alt="M2_HOME"></p>
+<p><img src="https://giscrazier.github.io/resoures/images/maven_cfg/path.jpg" alt="path"></p>
+<h1 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h1><p><code>pom.xml</code>用来管理项目依赖以及项目的编译等功能。<br>主要关注：<br>1.<code>dependencies</code><br>    是dependency的父元素。<br>2.<code>dependency</code><br>    每一个代表一个依赖。由<code>groupId</code>（组织唯一标识，如一般来说这个通常和公司或组织关联，比如说，你所在的公司为mycom.那就应该定义为<code>com.mycom.mymaven</code>，<code>mymaven</code>为项目名称），<code>artifactId</code>(组织唯一标识，例如HelloMaven这个项目，我则把他定义为<code>hello-maven</code>，还例如spring项目，他的 <code>groupId</code>为<code>org.springframework</code>，对于content项目来说<code>artifactId</code>则为spring-content，web项 目则为spring-web)，<code>version</code>（项目版本）来唯一确定。<br>3.变量定义<br>    <properties></properties>可以定义变量在dependency中引用：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring-framework-version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p> 4.编译插件<br> <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>wlfx-Maven01<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">source</span>&gt;</span>$&#123;java.version&#125;<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">target</span>&gt;</span>$&#123;java.version&#125;<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>Maven 运作方式<br>Maven最自动根据<code>dependency</code>中的依赖配置，直接通过互联网在Maven中心库下载相关依赖包到本地库。<br>若在Maven中心库中没有你需要的jar包（如Oracle），你需要通过下面的Maven命令打到Maven库后即可应用<br>Maven 安装 JAR 包的命令是：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -Dfile=jar包的位置 -DgroupId=groupId -DartifactId=artifactId -Dversion=version -Dpackaging=jar</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如安装Oracle驱动到本地库：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.2.0 -Dpackaging=jar -Dfile=D:\ojdbc14.jar</span><br></pre></td></tr></table></figure></p>
+<h1 id="idea中创建Maven-Web项目"><a href="#idea中创建Maven-Web项目" class="headerlink" title="idea中创建Maven Web项目"></a>idea中创建Maven Web项目</h1><ol>
+<li>选择：</li>
+</ol>
+<p><img src="https://giscrazier.github.io/resoures/images/maven_cfg/archetype-webapp.jpg" alt="archetype-webapp"></p>
+<p>填写<code>groupId</code>，<code>artifactId</code>，<code>version</code>后生产工程。</p>
+<ol>
+<li>这个时候IDE还有缓存，需要在右侧Maven project中 刷新一下，加载pom中的配置(这步蛮重要的,我之前就是忘记点了,导致项目配置始终有问题)<br>注：以后在pom中添加jar的依赖后，都要点击maven project的刷新按钮 刷下缓存,如下图所示：</li>
+</ol>
+<p><img src="https://giscrazier.github.io/resoures/images/maven_cfg/refresh.jpg" alt="刷新"><br>这个时候Maven webapp项目就彻底创建好了  不需要再在project structure进行配置了。</p>
+<ol>
+<li>tomcat配置</li>
+<li>修改pom.xml。增加Spring的依赖，添加编译插件，将编译级别设置为1.7.<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span><span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.8.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.1.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>wlfx-Maven01<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">source</span>&gt;</span>$&#123;java.version&#125;<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">target</span>&gt;</span>$&#123;java.version&#125;<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/maven/">maven</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-利用PowerDesigner将表导入到数据库" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -798,75 +885,6 @@
       
         <p class="article-more-link">
           <a  href="/2017/11/27/React-Router：从V2-V3迁移到V4/#more">谁与争锋 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-react-router4升级踩坑" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/11/27/react-router4升级踩坑/" class="article-date">
-      <time datetime="2017-11-27T13:18:04.000Z" itemprop="datePublished">2017-11-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/27/react-router4升级踩坑/">react-router4升级踩坑</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="package-json-配置修改"><a href="#package-json-配置修改" class="headerlink" title="package.json 配置修改"></a>package.json 配置修改</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-<span class="string">"react-router"</span>: <span class="string">"^2.4.0"</span>,</span><br><span class="line">+<span class="string">"react-router-dom"</span>: <span class="string">"^4.1.2"</span>,</span><br></pre></td></tr></table></figure>
-<p>react-router 还是 react-router-dom？</p>
-<p>在 React 的使用中，我们一般要引入两个包，<code>react</code> 和 <code>react-dom</code>，那么 <code>react-router</code> 和<code>react-router-dom</code> 是不是两个都要引用呢？<br>非也，坑就在这里。它们两个只要引用一个就行了，不同之处就是后者比前者多出了 <code>&lt;Link&gt;</code>、 <code>&lt;BrowserRouter&gt;</code> 这样的 DOM 类组件。<br>因此我们只需引用 <code>react-router-dom</code> 这个包就行了。当然，如果搭配 <code>redux</code> ，你还需要使用 <code>react-router-redux</code>。（<a href="https://github.com/ReactTraining/react-router/issues/4648" target="_blank" rel="noopener">what is the diff between react-router-dom &amp; react-router?</a>）<br>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/react/">react</a><a class="article-category-link" href="/categories/react/react-router/">react-router</a><a class="article-category-link" href="/categories/react/react-router/react-router-dom/">react-router-dom</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-router/">react-router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-router-dom/">react-router-dom</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/11/27/react-router4升级踩坑/#more">谁与争锋 >></a>
         </p>
       
       <div class="clearfix"></div>
