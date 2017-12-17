@@ -5,22 +5,22 @@
   
   <title>Maven 配置 | GISDOG&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Maven 配置  pom.xmlpom.xml用来管理项目依赖以及项目的编译等功能。主要关注：1.dependencies    是dependency的父元素。2.dependency    每一个代表一个依赖。由groupId（组织唯一标识，如一般来说这个通常和公司或组织关联，比如说，你所在的公司为mycom.那就应该定义为com.mycom.mymaven，mymaven为项目名称），a">
+  <meta name="description" content="Maven 是一个软件项目管理工具，基于项目对象模型POM的概念。Maven可用来管理项目依赖、编译、文档等信息。">
 <meta name="keywords" content="maven">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven 配置">
 <meta property="og:url" content="http://yoursite.com/2017/12/17/Maven-配置/index.html">
 <meta property="og:site_name" content="GISDOG&#39;s Blog">
-<meta property="og:description" content="Maven 配置  pom.xmlpom.xml用来管理项目依赖以及项目的编译等功能。主要关注：1.dependencies    是dependency的父元素。2.dependency    每一个代表一个依赖。由groupId（组织唯一标识，如一般来说这个通常和公司或组织关联，比如说，你所在的公司为mycom.那就应该定义为com.mycom.mymaven，mymaven为项目名称），a">
+<meta property="og:description" content="Maven 是一个软件项目管理工具，基于项目对象模型POM的概念。Maven可用来管理项目依赖、编译、文档等信息。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://giscrazier.github.io/resoures/images/maven_cfg/m2_home.jpg">
 <meta property="og:image" content="https://giscrazier.github.io/resoures/images/maven_cfg/path.jpg">
 <meta property="og:image" content="https://giscrazier.github.io/resoures/images/maven_cfg/archetype-webapp.jpg">
 <meta property="og:image" content="https://giscrazier.github.io/resoures/images/maven_cfg/refresh.jpg">
-<meta property="og:updated_time" content="2017-12-17T15:33:46.768Z">
+<meta property="og:updated_time" content="2017-12-17T15:49:01.747Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven 配置">
-<meta name="twitter:description" content="Maven 配置  pom.xmlpom.xml用来管理项目依赖以及项目的编译等功能。主要关注：1.dependencies    是dependency的父元素。2.dependency    每一个代表一个依赖。由groupId（组织唯一标识，如一般来说这个通常和公司或组织关联，比如说，你所在的公司为mycom.那就应该定义为com.mycom.mymaven，mymaven为项目名称），a">
+<meta name="twitter:description" content="Maven 是一个软件项目管理工具，基于项目对象模型POM的概念。Maven可用来管理项目依赖、编译、文档等信息。">
 <meta name="twitter:image" content="https://giscrazier.github.io/resoures/images/maven_cfg/m2_home.jpg">
   
     <link rel="alternative" href="/atom.xml" title="GISDOG&#39;s Blog" type="application/atom+xml">
@@ -273,7 +273,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <a id="more"></a>
+        <p>Maven 是一个软件项目管理工具，基于项目对象模型POM的概念。Maven可用来管理项目依赖、编译、文档等信息。</p>
+ <a id="more"></a>
 <h1 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a>Maven 配置</h1><p><img src="https://giscrazier.github.io/resoures/images/maven_cfg/m2_home.jpg" alt="M2_HOME"></p>
 <p><img src="https://giscrazier.github.io/resoures/images/maven_cfg/path.jpg" alt="path"></p>
 <h1 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h1><p><code>pom.xml</code>用来管理项目依赖以及项目的编译等功能。<br>主要关注：<br>1.<code>dependencies</code><br>    是dependency的父元素。<br>2.<code>dependency</code><br>    每一个代表一个依赖。由<code>groupId</code>（组织唯一标识，如一般来说这个通常和公司或组织关联，比如说，你所在的公司为mycom.那就应该定义为<code>com.mycom.mymaven</code>，<code>mymaven</code>为项目名称），<code>artifactId</code>(组织唯一标识，例如HelloMaven这个项目，我则把他定义为<code>hello-maven</code>，还例如spring项目，他的 <code>groupId</code>为<code>org.springframework</code>，对于content项目来说<code>artifactId</code>则为spring-content，web项 目则为spring-web)，<code>version</code>（项目版本）来唯一确定。<br>3.变量定义<br>    <properties></properties>可以定义变量在dependency中引用：</p>
@@ -356,7 +357,7 @@
         <p><span>本文标题:</span><a href="/2017/12/17/Maven-配置/">Maven 配置</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 浦深 的个人博客">浦深</a></p>
         <p><span>发布时间:</span>2017年12月17日 - 23时18分</p>
-        <p><span>最后更新:</span>2017年12月17日 - 23时33分</p>
+        <p><span>最后更新:</span>2017年12月17日 - 23时49分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/12/17/Maven-配置/" title="Maven 配置">http://yoursite.com/2017/12/17/Maven-配置/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/17/Maven-配置/　　作者: 浦深" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
