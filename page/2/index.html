@@ -151,7 +151,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/AGS-For-JS/" style="font-size: 10px;">AGS For JS</a> <a href="/tags/D3/" style="font-size: 10px;">D3</a> <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/GIS/" style="font-size: 10px;">GIS</a> <a href="/tags/HOC/" style="font-size: 10px;">HOC</a> <a href="/tags/PowerDesigner/" style="font-size: 10px;">PowerDesigner</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/create-user/" style="font-size: 10px;">create user</a> <a href="/tags/fecth/" style="font-size: 10px;">fecth</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/koa/" style="font-size: 10px;">koa</a> <a href="/tags/koa-router/" style="font-size: 10px;">koa-router</a> <a href="/tags/koa2/" style="font-size: 10px;">koa2</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 20px;">react-router</a> <a href="/tags/react-router-dom/" style="font-size: 20px;">react-router-dom</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/stacks/" style="font-size: 10px;">stacks</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/代码样式/" style="font-size: 10px;">代码样式</a> <a href="/tags/服务端渲染/" style="font-size: 10px;">服务端渲染</a>
+                        <a href="/tags/AGS-For-JS/" style="font-size: 15px;">AGS For JS</a> <a href="/tags/D3/" style="font-size: 10px;">D3</a> <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/GIS/" style="font-size: 15px;">GIS</a> <a href="/tags/HOC/" style="font-size: 10px;">HOC</a> <a href="/tags/PowerDesigner/" style="font-size: 10px;">PowerDesigner</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/create-user/" style="font-size: 10px;">create user</a> <a href="/tags/fecth/" style="font-size: 10px;">fecth</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/koa/" style="font-size: 10px;">koa</a> <a href="/tags/koa-router/" style="font-size: 10px;">koa-router</a> <a href="/tags/koa2/" style="font-size: 10px;">koa2</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 20px;">react-router</a> <a href="/tags/react-router-dom/" style="font-size: 20px;">react-router-dom</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/stacks/" style="font-size: 10px;">stacks</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/代码样式/" style="font-size: 10px;">代码样式</a> <a href="/tags/服务端渲染/" style="font-size: 10px;">服务端渲染</a>
                     </div>
                 </section>
                 
@@ -228,6 +228,136 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-webstorm-中配置supervisor或者nodemon来发布Node服务" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/" class="article-date">
+      <time datetime="2017-12-12T08:18:34.000Z" itemprop="datePublished">2017-12-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/">webstorm 中配置supervisor或者nodemon来发布Node服务</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>在我们开发<code>php</code>，<code>java</code>等<code>web</code>项目的时候，修改了项目代码，服务器都会自动重启，让我们的改动生效，但是node并不会这样，必须手动去重启一下，这样很烦人的啊，很浪费时间，于是就有大神开发了自动重启的工具——<code>nodemon</code>或者<code>supervisor</code>，很简单的。<br>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a  href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/#more">谁与争锋 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-koa2-webpack-热更新" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/05/koa2-webpack-热更新/" class="article-date">
+      <time datetime="2017-12-05T03:33:38.000Z" itemprop="datePublished">2017-12-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/05/koa2-webpack-热更新/">koa2 + webpack 热更新</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="需要的包"><a href="#需要的包" class="headerlink" title="需要的包"></a>需要的包</h1><ul>
+<li><code>webpack</code>:用于构建项目</li>
+<li><code>webpack-dev-middleware</code>:用于处理静态文件</li>
+<li><code>webpack-hot-middleware</code>:用于实现无刷新更新</li>
+</ul>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/koa2/">koa2</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/koa2/">koa2</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/12/05/koa2-webpack-热更新/#more">谁与争锋 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-玩转-React-服务器端渲染" class="article article-type-post" itemscope itemprop="blogPost">
   

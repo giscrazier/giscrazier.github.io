@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hello world | GISDOG&#39;s Blog</title>
+  <title>ArcGIS For JS之二——与React集成 | GISDOG&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta name="keywords" content="hexo">
+  <meta name="description" content="看着前端技术日益蓬勃发展，而我们却不能随心去用，岂不惋惜。好在，esri考虑到了这一点，为我们提供了相应的适配技术。本文讲解基于Webpack，babel，React与ArcGIS For JS的集成技术。">
+<meta name="keywords" content="AGS For JS,GIS,React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello world">
-<meta property="og:url" content="http://yoursite.com/2017/12/13/hello-world/index.html">
+<meta property="og:title" content="ArcGIS For JS之二——与React集成">
+<meta property="og:url" content="http://yoursite.com/2018/01/15/ArcGIS-For-JS之二：与React集成/index.html">
 <meta property="og:site_name" content="GISDOG&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="看着前端技术日益蓬勃发展，而我们却不能随心去用，岂不惋惜。好在，esri考虑到了这一点，为我们提供了相应的适配技术。本文讲解基于Webpack，babel，React与ArcGIS For JS的集成技术。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-13T15:10:36.563Z">
+<meta property="og:updated_time" content="2018-01-16T16:23:20.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello world">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="ArcGIS For JS之二——与React集成">
+<meta name="twitter:description" content="看着前端技术日益蓬勃发展，而我们却不能随心去用，岂不惋惜。好在，esri考虑到了这一点，为我们提供了相应的适配技术。本文讲解基于Webpack，babel，React与ArcGIS For JS的集成技术。">
   
     <link rel="alternative" href="/atom.xml" title="GISDOG&#39;s Blog" type="application/atom+xml">
   
@@ -226,11 +226,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ArcGIS-For-JS之二：与React集成" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/12/13/hello-world/" class="article-date">
-      <time datetime="2017-12-13T14:49:04.000Z" itemprop="datePublished">2017-12-13</time>
+      <a href="/2018/01/15/ArcGIS-For-JS之二：与React集成/" class="article-date">
+      <time datetime="2018-01-15T12:52:51.000Z" itemprop="datePublished">2018-01-15</time>
 </a>
     </div>
   
@@ -243,7 +243,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hello world
+      ArcGIS For JS之二——与React集成
     </h1>
   
 
@@ -251,10 +251,14 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/AGS-For-JS/">AGS For JS</a><a class="article-category-link" href="/categories/AGS-For-JS/GIS/">GIS</a><a class="article-category-link" href="/categories/AGS-For-JS/GIS/React/">React</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AGS-For-JS/">AGS For JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIS/">GIS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -264,16 +268,27 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
- <a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>看着前端技术日益蓬勃发展，而我们却不能随心去用，岂不惋惜。好在，esri考虑到了这一点，为我们提供了相应的适配技术。本文讲解基于Webpack，babel，React与ArcGIS For JS的集成技术。</p>
+<a id="more"></a>
+<h1 id="esri-loader"><a href="#esri-loader" class="headerlink" title="esri-loader"></a><a href="https://github.com/Esri/esri-loader" target="_blank" rel="noopener">esri-loader</a></h1><p>我们知道，<code>IE</code>严重拖了前端发展的后腿，而我们的很多客户只会用<code>IE</code>不知道有啥<code>FF</code>，<code>Chrome</code>。那么先进的<code>ES6</code>等就不能在这些宿主上运行了，对应的就出现了，<code>babel</code>和各种各样的<code>loader</code>。同样，arcgis for javascript api不能在没有<code>dojo</code>的环境中加载，因此为了加载这些api，<code>esri</code>为我们提供相应的<code>loader</code>，这里使用的是<code>webpack</code>，那么就需要<code>esri-loader</code>。</p>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> <span class="comment">--save esri-loader</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
+<li>Loading Styles</li>
+</ul>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/* esri styles */</span></span><br><span class="line"><span class="meta">@import</span> url(<span class="symbol">'https</span>:<span class="comment">//js.arcgis.com/4.6/esri/css/main.css');</span></span><br><span class="line"><span class="comment">/* esri styles */</span></span><br><span class="line"><span class="meta">@import</span> url(<span class="symbol">'https</span>:<span class="comment">//js.arcgis.com/3.23/esri/css/esri.css');</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Loading Modules from the ArcGIS API for JavaScript</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// first, we use Dojo's loader to require the map class</span></span><br><span class="line">esriLoader.loadModules([<span class="string">'esri/views/MapView'</span>, <span class="string">'esri/WebMap'</span>])</span><br><span class="line">.then(<span class="function">(<span class="params">[MapView, WebMap]</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// then we load a web map from an id</span></span><br><span class="line">  <span class="keyword">var</span> webmap = <span class="keyword">new</span> WebMap(&#123;</span><br><span class="line">    portalItem: &#123; <span class="comment">// autocasts as new PortalItem()</span></span><br><span class="line">      id: <span class="string">'f2e9b762544945f390ca4ac3671cfa72'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// and we show that map in a container w/ id #viewDiv</span></span><br><span class="line">  <span class="keyword">var</span> view = <span class="keyword">new</span> MapView(&#123;</span><br><span class="line">    map: webmap,</span><br><span class="line">    container: <span class="string">'viewDiv'</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">.catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// handle any errors</span></span><br><span class="line">  <span class="built_in">console</span>.error(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>在4.x的api中esri用了大量的<code>Promise</code>,正如上面的<code>loadModules()</code>它返回的也是一个<code>Promise</code>,它会以懒加载的形式去加载项目中还没有通过<code>loadScript()</code>被加载的被请求的模块。注意：在项目中一旦木块被<code>loadScript()</code>加载成功，那么<code>loadModules()</code>将不会再次去加载它。</p>
+<h1 id="esri-loader-react"><a href="#esri-loader-react" class="headerlink" title="esri-loader-react"></a><a href="https://github.com/davetimmins/esri-loader-react" target="_blank" rel="noopener">esri-loader-react</a></h1><p><code>esri-loader-react</code>是使用React组件对<code>esri-loader</code>的一层封装，以更方便的在React中使用。</p>
+<blockquote>
+<p>Version 2.x of this library is compatible with esri-loader 1.5.0 and higher.</p>
+</blockquote>
+<h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install react react-dom prop-types esri-loader esri-loader-react</span><br></pre></td></tr></table></figure>
+<h2 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123;PureComponent&#125; from &apos;react&apos;;</span><br><span class="line">import EsriLoaderReact from &apos;esri-loader-react&apos;;</span><br><span class="line"></span><br><span class="line">class AppMain extends PureComponent &#123;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    const options = &#123;</span><br><span class="line">      url: &apos;https://js.arcgis.com/4.6/&apos;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    return (</span><br><span class="line">      &lt;EsriLoaderReact </span><br><span class="line">        options=&#123;options&#125; </span><br><span class="line">        modulesToLoad=&#123;[&apos;esri/Map&apos;, &apos;esri/views/MapView&apos;]&#125;    </span><br><span class="line">        onReady=&#123;(&#123;loadedModules: [Map, MapView], containerNode&#125;) =&gt; &#123;</span><br><span class="line">          new MapView(&#123;</span><br><span class="line">            container: containerNode,</span><br><span class="line">            map: new Map(&#123;basemap: &apos;oceans&apos;&#125;)</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该组件有如下属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">EsriLoaderReact.propTypes = &#123;</span><br><span class="line">  renderMapContainer: PropTypes.bool, // default is true</span><br><span class="line">  mapContainerClassName: PropTypes.string, // default is &apos;map-view&apos;</span><br><span class="line">  modulesToLoad: PropTypes.arrayOf(PropTypes.string),</span><br><span class="line">  options: PropTypes.shape(&#123;</span><br><span class="line">    url: PropTypes.string,</span><br><span class="line">    dojoConfig: PropTypes.object</span><br><span class="line">  &#125;),</span><br><span class="line">  onError: PropTypes.func, // (error, info) =&gt; also called from componentDidCatch, default is onError: (error, info) =&gt; console.error(error),</span><br><span class="line">  onReady: PropTypes.func, // (&#123;loadedModules, containerNode&#125;) =&gt; containerNode is null if renderMapContainer !== true</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
       
@@ -329,13 +344,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/12/13/hello-world/">hello world</a></p>
+        <p><span>本文标题:</span><a href="/2018/01/15/ArcGIS-For-JS之二：与React集成/">ArcGIS For JS之二——与React集成</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 浦深 的个人博客">浦深</a></p>
-        <p><span>发布时间:</span>2017年12月13日 - 22时49分</p>
-        <p><span>最后更新:</span>2017年12月13日 - 23时10分</p>
+        <p><span>发布时间:</span>2018年01月15日 - 20时52分</p>
+        <p><span>最后更新:</span>2018年01月17日 - 00时23分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/12/13/hello-world/" title="hello world">http://yoursite.com/2017/12/13/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/13/hello-world/　　作者: 浦深" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/01/15/ArcGIS-For-JS之二：与React集成/" title="ArcGIS For JS之二——与React集成">http://yoursite.com/2018/01/15/ArcGIS-For-JS之二：与React集成/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/01/15/ArcGIS-For-JS之二：与React集成/　　作者: 浦深" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -348,18 +363,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/12/14/oralce-创建用户及分配表空间/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/16/SQL中over用法大全/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          oralce 创建用户及分配表空间
+          SQL中over用法大全
         
       </div>
     </a>
   
   
-    <a href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">webstorm 中配置supervisor或者nodemon来发布Node服务</div>
+    <a href="/2018/01/09/React-高阶组件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React-高阶组件</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -370,7 +385,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#esri-loader"><span class="toc-number">1.</span> <span class="toc-text"><a href="#esri-loader" class="headerlink" title="esri-loader"></a><a href="https://github.com/Esri/esri-loader" target="_blank" rel="noopener">esri-loader</a></span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Install"><span class="toc-number">1.1.</span> <span class="toc-text"><a href="#Install" class="headerlink" title="Install"></a>Install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">1.2.</span> <span class="toc-text"><a href="#&#x4F7F;&#x7528;" class="headerlink" title="&#x4F7F;&#x7528;"></a>&#x4F7F;&#x7528;</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#esri-loader-react"><span class="toc-number">2.</span> <span class="toc-text"><a href="#esri-loader-react" class="headerlink" title="esri-loader-react"></a><a href="https://github.com/davetimmins/esri-loader-react" target="_blank" rel="noopener">esri-loader-react</a></span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#install"><span class="toc-number">2.1.</span> <span class="toc-text"><a href="#install" class="headerlink" title="install"></a>install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-1"><span class="toc-number">2.2.</span> <span class="toc-text"><a href="#&#x4F7F;&#x7528;-1" class="headerlink" title="&#x4F7F;&#x7528;"></a>&#x4F7F;&#x7528;</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -436,13 +451,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/12/14/oralce-创建用户及分配表空间/" title="上一篇: oralce 创建用户及分配表空间">
+            <a href="/2018/01/16/SQL中over用法大全/" title="上一篇: SQL中over用法大全">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/" title="下一篇: webstorm 中配置supervisor或者nodemon来发布Node服务">
+            <a href="/2018/01/09/React-高阶组件/" title="下一篇: React-高阶组件">
                 <i class="fa fa-angle-right"></i>
             </a>
         
