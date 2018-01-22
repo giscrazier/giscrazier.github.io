@@ -151,7 +151,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/AGS-For-JS/" style="font-size: 15px;">AGS For JS</a> <a href="/tags/ArcGIS/" style="font-size: 10px;">ArcGIS</a> <a href="/tags/D3/" style="font-size: 10px;">D3</a> <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/GIS/" style="font-size: 15px;">GIS</a> <a href="/tags/HOC/" style="font-size: 10px;">HOC</a> <a href="/tags/PowerDesigner/" style="font-size: 10px;">PowerDesigner</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/create-user/" style="font-size: 10px;">create user</a> <a href="/tags/fecth/" style="font-size: 10px;">fecth</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/koa/" style="font-size: 10px;">koa</a> <a href="/tags/koa-router/" style="font-size: 10px;">koa-router</a> <a href="/tags/koa2/" style="font-size: 10px;">koa2</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/postgis/" style="font-size: 10px;">postgis</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 20px;">react-router</a> <a href="/tags/react-router-dom/" style="font-size: 20px;">react-router-dom</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/stacks/" style="font-size: 10px;">stacks</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/代码样式/" style="font-size: 10px;">代码样式</a> <a href="/tags/服务端渲染/" style="font-size: 10px;">服务端渲染</a> <a href="/tags/空间索引/" style="font-size: 10px;">空间索引</a>
+                        <a href="/tags/AGS-For-JS/" style="font-size: 15px;">AGS For JS</a> <a href="/tags/ArcGIS/" style="font-size: 10px;">ArcGIS</a> <a href="/tags/D3/" style="font-size: 10px;">D3</a> <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/GIS/" style="font-size: 15px;">GIS</a> <a href="/tags/HOC/" style="font-size: 10px;">HOC</a> <a href="/tags/PostgreSQL/" style="font-size: 15px;">PostgreSQL</a> <a href="/tags/PowerDesigner/" style="font-size: 10px;">PowerDesigner</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/create-user/" style="font-size: 10px;">create user</a> <a href="/tags/fecth/" style="font-size: 10px;">fecth</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/koa/" style="font-size: 10px;">koa</a> <a href="/tags/koa-router/" style="font-size: 10px;">koa-router</a> <a href="/tags/koa2/" style="font-size: 10px;">koa2</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/postgis/" style="font-size: 10px;">postgis</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 20px;">react-router</a> <a href="/tags/react-router-dom/" style="font-size: 20px;">react-router-dom</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/stacks/" style="font-size: 10px;">stacks</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/代码样式/" style="font-size: 10px;">代码样式</a> <a href="/tags/服务端渲染/" style="font-size: 10px;">服务端渲染</a> <a href="/tags/空间索引/" style="font-size: 10px;">空间索引</a>
                     </div>
                 </section>
                 
@@ -228,6 +228,140 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-PostgreSQL学习手册" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/01/22/PostgreSQL学习手册/" class="article-date">
+      <time datetime="2018-01-22T10:21:05.000Z" itemprop="datePublished">2018-01-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/22/PostgreSQL学习手册/">PostgreSQL学习手册</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>事实上之前有很长一段时间都在纠结是否有必要好好学习它，但是始终都没有一个很好的理由说服自己。甚至是直到这个项目最终决定选用<code>PostgreSQL</code>时，我都没有真正意识到学习它的价值，当时只是想反正和其它数据库差不多，能用就行了。然而有一天晚上，自己也不知道为什么，躺在床上开始回想整个项目的实施过程，想着想着就想到了数据库选型这一问题上了。事情是这样的，最初客户将他们的产品目标定位为主打中型规模，同时也要在一定程度上支持小型规模。鉴于此，我们为他们提供的方案是中型规模的数据库选用<code>Oracle</code>，小型规模的选定<code>MySQL</code>，在经过多轮商谈之后这个方案通过了。然而随着项目的深入，客户突然有一天提出，由于成本和市场推广等问题，该产品的数据库部分需要进行一定的调整，调整的结果是中型规模可以同时支持<code>Oracle</code>和<code>MySQL</code>，而小型规模则要同时支持<code>MySQL</code>和<code>PostgreSQL</code>，原因非常简单，<code>PostgreSQL</code>是纯免费的数据库产品。听到这个消息之后，我当时就非常恼火，因为当初为了保证运行时效率(国标)，我们的数据库访问层是完全基于数据库供应商提供的原始<code>C</code>接口开发的，甚至都没有考虑<code>ODBC</code>提供的原始<code>C</code>接口，以防在转换中失去效率，或是<code>ODBC</code>本身为了强调通用性而不得不牺牲某些数据库的优化特征，如批量插入、批量读取等。最后的结果显而易见，客户就是上帝，上帝的意见就是真理，这样我们就不得不基于现有的访问层接口又重新开发了一套支持<code>PostgreSQL</code>原生<code>C</code>接口的驱动。然而随着对<code>PostgreSQL</code>的不断学习，对它的了解也在逐步加深，后来发现它的功能还是非常强大的，特别是对<code>GIS</code>空间数据的支持就更加的吸引我了。于是就在脑子里为<code>MySQL</code>和<code>PostgreSQL</code>做了一个简单的对比和分析，最后得出一个结论，相比<code>MySQL</code>，<code>PostgreSQL</code>并没有什么刚性的缺点，但是它的纯免费特征确实是<code>MySQL</code>无法比拟的。它完全可以成为软件产品解决方案中非常重要的一环，特别是针对很多中低端用户，不仅在使用中不会感到任何差异，而且还能节省一部分额外的费用，这对于产品的市场推广是非常有帮助的。想到这里便决定起而行之，花上一段时间好好的学习和研究它，于是就有了这个系列的博客。<br>    好了，闲淡扯的差不多了，让我们还是言归正传吧！</p>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/PostgreSQL/">PostgreSQL</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2018/01/22/PostgreSQL学习手册/#more">谁与争锋 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-PostgreSQL笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/01/19/PostgreSQL笔记/" class="article-date">
+      <time datetime="2018-01-19T08:15:46.000Z" itemprop="datePublished">2018-01-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/19/PostgreSQL笔记/">postgresql笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><code>PostgreSQL</code>学习使用过程中的细小知识</p>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/PostgreSQL/">PostgreSQL</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2018/01/19/PostgreSQL笔记/#more">谁与争锋 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-PostGis空间索引" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -731,136 +865,6 @@
       
         <p class="article-more-link">
           <a  href="/2017/12/23/D3-stacks/#more">谁与争锋 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Maven-配置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/17/Maven-配置/" class="article-date">
-      <time datetime="2017-12-17T15:18:43.000Z" itemprop="datePublished">2017-12-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/17/Maven-配置/">Maven 配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>Maven 是一个软件项目管理工具，基于项目对象模型POM的概念。Maven可用来管理项目依赖、编译、文档等信息。</p>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/maven/">maven</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/12/17/Maven-配置/#more">谁与争锋 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-利用PowerDesigner将表导入到数据库" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/14/利用PowerDesigner将表导入到数据库/" class="article-date">
-      <time datetime="2017-12-14T02:54:08.000Z" itemprop="datePublished">2017-12-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/14/利用PowerDesigner将表导入到数据库/">利用PowerDesigner将表导入到数据库</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>在利用PowerDesigner将库表设计好之后，便可以使用它将表直接导入数据库。<br>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DB/">DB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PowerDesigner/">PowerDesigner</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/12/14/利用PowerDesigner将表导入到数据库/#more">谁与争锋 >></a>
         </p>
       
       <div class="clearfix"></div>
