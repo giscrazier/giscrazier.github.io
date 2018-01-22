@@ -3,24 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>D3-stacks | GISDOG&#39;s Blog</title>
+  <title>MyBatis笔记 | GISDOG&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="按照某种顺序的x，y轴由多个层次构成，这种形状便是堆叠图。">
-<meta name="keywords" content="D3,stacks,visualization">
+  <meta name="description" content="MyBatis学习笔记，记录细小易忘知识点，持续更新中……">
+<meta name="keywords" content="MyBatis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="D3-stacks">
-<meta property="og:url" content="http://yoursite.com/2017/12/23/D3-stacks/index.html">
+<meta property="og:title" content="MyBatis笔记">
+<meta property="og:url" content="http://yoursite.com/2018/01/22/MyBatis笔记/index.html">
 <meta property="og:site_name" content="GISDOG&#39;s Blog">
-<meta property="og:description" content="按照某种顺序的x，y轴由多个层次构成，这种形状便是堆叠图。">
+<meta property="og:description" content="MyBatis学习笔记，记录细小易忘知识点，持续更新中……">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://giscrazier.github.io/resoures/images/D3_stacks/1509276209978.jpg">
-<meta property="og:image" content="https://giscrazier.github.io/resoures/images/D3_stacks/1509276258160.jpg">
-<meta property="og:image" content="https://giscrazier.github.io/resoures/images/D3_stacks/1509277389746.jpg">
-<meta property="og:updated_time" content="2017-12-23T09:19:39.883Z">
+<meta property="og:updated_time" content="2018-01-22T11:46:58.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="D3-stacks">
-<meta name="twitter:description" content="按照某种顺序的x，y轴由多个层次构成，这种形状便是堆叠图。">
-<meta name="twitter:image" content="https://giscrazier.github.io/resoures/images/D3_stacks/1509276209978.jpg">
+<meta name="twitter:title" content="MyBatis笔记">
+<meta name="twitter:description" content="MyBatis学习笔记，记录细小易忘知识点，持续更新中……">
   
     <link rel="alternative" href="/atom.xml" title="GISDOG&#39;s Blog" type="application/atom+xml">
   
@@ -230,11 +226,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-D3-stacks" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-MyBatis笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/12/23/D3-stacks/" class="article-date">
-      <time datetime="2017-12-23T08:49:46.000Z" itemprop="datePublished">2017-12-23</time>
+      <a href="/2018/01/22/MyBatis笔记/" class="article-date">
+      <time datetime="2018-01-22T10:48:32.000Z" itemprop="datePublished">2018-01-22</time>
 </a>
     </div>
   
@@ -247,7 +243,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      D3-stacks
+      MyBatis笔记
     </h1>
   
 
@@ -256,13 +252,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/D3/">D3</a><a class="article-category-link" href="/categories/D3/stacks/">stacks</a><a class="article-category-link" href="/categories/D3/stacks/visualization/">visualization</a>
+    <a class="article-category-link" href="/categories/MyBatis/">MyBatis</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/D3/">D3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stacks/">stacks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/visualization/">visualization</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -272,21 +268,39 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>按照某种顺序的x，y轴由多个层次构成，这种形状便是堆叠图。</p>
- <a id="more"></a>
-<p>如：</p>
-<p><a href="https://bl.ocks.org/mbostock/3886208" target="_blank" rel="noopener"><img src="https://giscrazier.github.io/resoures/images/D3_stacks/1509276209978.jpg" alt="stacks bar"></a></p>
-<p><a href="https://bl.ocks.org/mbostock/4060954" target="_blank" rel="noopener"><img src="https://giscrazier.github.io/resoures/images/D3_stacks/1509276258160.jpg" alt="stack river"></a></p>
-<blockquote>
-<p>堆叠图可以同时展示总量和构成总量的分量组成。但是不同的分量之间是难以比较的。</p>
-</blockquote>
-<p>d3提供了<code>d3.stack()</code> 来生成堆叠图。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stack = d3.stack()</span><br></pre></td></tr></table></figure>
-<p>stack根据指定的数组计算出一个stack布局。<code>stack(data[, arguments…])</code> 它返回一个三维数组：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">	[<span class="comment">//这一维度表示x轴对应的节点</span></span><br><span class="line">		[],<span class="comment">//这一维度有多少个兄弟元素，则表示，每一个x轴节点在y轴上有几个层次，</span></span><br><span class="line">		[]<span class="comment">//数组元素表示每一个层次的底部对应的y值，和顶部对应的y值</span></span><br><span class="line">	],</span><br><span class="line">	[<span class="comment">//这一维度表示x轴对应的节点</span></span><br><span class="line">		[],</span><br><span class="line">		[]</span><br><span class="line">	]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<h1 id="构造stack"><a href="#构造stack" class="headerlink" title="构造stack"></a>构造stack</h1><p>以如下数据为例：</p>
-<p><img src="https://giscrazier.github.io/resoures/images/D3_stacks/1509277389746.jpg" alt="row data"><br>我们要以Month为x轴，其属性堆叠在y轴来展示一个堆叠图。</p>
-<p><code>stack.keys([keys])</code><br>用于设置那些属性要在y轴上做堆叠展示。<br>在这里即为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stack.keys([<span class="string">"Apples"</span>, <span class="string">"Bananas"</span>, <span class="string">"Cherries"</span>, <span class="string">"Dates"</span>])</span><br></pre></td></tr></table></figure></p>
-<p><code>stack.value([func])</code><br>设置获取每个key获取对应值的方式。一般情况下不用修改这个，默认就可以。它默认是，以对象属性读取的方式读取value值。<br><code>stack.order([order])</code><br>设置y轴上的堆叠属性的顺序。默认为<code>d3.stackOrderNone(series)</code>，即<code>keys</code>设置的顺序。<br><code>stack.offset([offset])</code><br>设置堆叠类型。</p>
+        <p>MyBatis学习笔记，记录细小易忘知识点，持续更新中……<br><a id="more"></a></p>
+<h1 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h1><p>最近有个需求是，前端上传excel文件，然后根据这个excel创建数据表，并将数据插入。由于excel没有具体的格式，那么不能预先创建表。</p>
+<h2 id="mapper-xml"><a href="#mapper-xml" class="headerlink" title="mapper.xml"></a>mapper.xml</h2><p>我们都知道，MyBatis对数据库的操作都是通过mapper.xml文件进行的，那我们就首先创建一个针对DDL操作的Mapper.xml文件：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</span><br><span class="line">&lt;mapper namespace="com.newland.wlfx.dao.DDLMapper"&gt;&lt;!--指定与该Mapper.xml文件对应的Dao--&gt;</span><br><span class="line">    &lt;update id="createNewTableAndInsert" keyColumn=""&gt;</span><br><span class="line">        CREATE TABLE $<span class="template-variable">&#123;newTableName&#125;</span>(</span><br><span class="line">            $<span class="template-variable">&#123;newTableName&#125;</span>_id SERIAL PRIMARY KEY,</span><br><span class="line">            &lt;foreach collection="fieldModel" item="l" separator=","&gt;</span><br><span class="line">                $<span class="template-variable">&#123;l.field&#125;</span> $<span class="template-variable">&#123;l.fieldType&#125;</span></span><br><span class="line">            &lt;/foreach&gt;</span><br><span class="line">            ,field_end INT DEFAULT 0&lt;!--迭代末尾不会添加分隔符，这里有其他值的话就要在其前面添加分隔符。这里的字段是为了演示。--&gt;</span><br><span class="line">        );</span><br><span class="line">        INSERT INTO $<span class="template-variable">&#123;newTableName&#125;</span>(</span><br><span class="line">            &lt;foreach collection="fieldModel" item="l" separator=","&gt;</span><br><span class="line">                $<span class="template-variable">&#123;l.field&#125;</span></span><br><span class="line">            &lt;/foreach&gt;</span><br><span class="line">        )VALUES</span><br><span class="line">        &lt;foreach collection="data" item="perD" separator=","&gt;</span><br><span class="line">            (</span><br><span class="line">            &lt;foreach collection="perD" item="d" separator=","&gt;</span><br><span class="line">                #<span class="template-variable">&#123;d&#125;</span></span><br><span class="line">            &lt;/foreach&gt;</span><br><span class="line">            )</span><br><span class="line">        &lt;/foreach&gt;</span><br><span class="line">    &lt;/update&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+<p>看上去没啥特别的，需要注意的是：</p>
+<h2 id="和-的区别："><a href="#和-的区别：" class="headerlink" title="${}和#{}的区别："></a><code>${}</code>和<code>#{}</code>的区别：</h2><ul>
+<li><p>#如果传入的值是字符串，则会自动为该值添加双引号，eg:<code>select id,name,age from student where id =#{id}</code>,当前端把<code>id</code>值1，传入到后台的时候，就相当于 <code>select id,name,age from student where id =&#39;1&#39;</code>.如果不是字符串，就不会添加了。</p>
+</li>
+<li><p><code>$</code>是将传入的数据直接显示生成<code>sql</code>语句，eg:<code>select id,name,age from student where id =${id}</code>,当前端把id值1，传入到后台的时候，就相当于 <code>select id,name,age from student where id = 1</code>.</p>
+</li>
+<li><p>使用<code>#</code>可以很大程度上防止<code>sql</code>注入，用于拼接sql，<code>select id,name,age from student where id =?</code>用于为语句提供<code>？</code>对应的值。其他情况就用<code>$</code>.</p>
+</li>
+<li><p>但是如果使用在<code>order by</code> 中就需要使用 <code>$</code>.</p>
+</li>
+<li><p>在大多数情况下还是经常使用<code>#</code>，但在不同情况下必须使用<code>$</code>.<br>上面代码中，表名，字段名等是字符串的形式，但是，不能给它们添加双引号。因此必须使用<code>$</code>，而后面在插入语句中（嵌套的<code>&lt;foreach&gt;</code>用于批量插入），使用了<code>#</code>因为遇到字符串的时候，必须给它们添加双引号。<br>在一个操作中，可以将多个语句拼接在一起，一次性执行。</p>
+</li>
+</ul>
+<h2 id="lt-foreach-gt-标签"><a href="#lt-foreach-gt-标签" class="headerlink" title="&lt;foreach&gt;标签"></a><code>&lt;foreach&gt;</code>标签</h2><p><code>foreach</code>元素的属性主要有：</p>
+<ul>
+<li><code>item</code>表示集合中每一个元素进行迭代时的别名，</li>
+<li><code>index</code>指定一个名字，用于表示在迭代过程中，每次迭代到的位置，</li>
+<li><code>open</code>表示该语句以什么开始，</li>
+<li><code>separator</code>表示在每次进行迭代之间以什么符号作为分隔符，它是必须的属性</li>
+<li><code>close</code>表示以什么结束。</li>
+</ul>
+<p>在使用<code>foreach</code>的时候最关键的也是最容易出错的就是<code>collection</code>属性，该属性是必须指定的，但是在不同情况 下，该属性的值是不一样的，主要有一下3种情况：</p>
+<ol>
+<li>如果传入的是单参数且参数类型是一个<code>List</code>的时候，<code>collection</code>属性值为<code>list</code></li>
+<li>如果传入的是单参数且参数类型是一个<code>array</code>数组的时候，<code>collection</code>的属性值为<code>array</code></li>
+<li>如果传入的参数是多个的时候，我们就需要把它们封装成一个<code>Map</code>了，当然单参数也可以封装成map，实际上如果你在传入参数的时候，在breast里面也是会把它封装成一个Map的，map的key就是参数名，所以这个时候collection属性值就是传入的List或array对象在自己封装的map里面的key。</li>
+</ol>
+<h2 id="Dao"><a href="#Dao" class="headerlink" title="Dao"></a>Dao</h2><p>mapper.xml写好了，根据参数设置写Dao即可，很简单了：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">com</span><span class="selector-class">.newland</span><span class="selector-class">.wlfx</span><span class="selector-class">.model</span><span class="selector-class">.FieldModel</span>;</span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">org</span><span class="selector-class">.apache</span><span class="selector-class">.ibatis</span><span class="selector-class">.annotations</span><span class="selector-class">.Param</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">java</span><span class="selector-class">.util</span><span class="selector-class">.List</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">public</span> <span class="selector-tag">interface</span> <span class="selector-tag">DDLMapper</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据传入的表名，创建新的表并且添加数据</span></span><br><span class="line"><span class="comment">     * @param newTableName 表名</span></span><br><span class="line"><span class="comment">     * @param fieldModel 字段模型</span></span><br><span class="line"><span class="comment">     * @param data 数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">void</span> <span class="selector-tag">createNewTableAndInsert</span>(<span class="variable">@Param</span>(<span class="string">"newTableName"</span>) String newTableName,</span><br><span class="line">                                 <span class="variable">@Param</span>(<span class="string">"fieldModel"</span>) List&lt;FieldModel&gt; fieldModel,</span><br><span class="line">                                 <span class="variable">@Param</span>(<span class="string">"data"</span>) List&lt;Object[]&gt; data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
       
@@ -342,13 +356,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/12/23/D3-stacks/">D3-stacks</a></p>
+        <p><span>本文标题:</span><a href="/2018/01/22/MyBatis笔记/">MyBatis笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 浦深 的个人博客">浦深</a></p>
-        <p><span>发布时间:</span>2017年12月23日 - 16时49分</p>
-        <p><span>最后更新:</span>2017年12月23日 - 17时19分</p>
+        <p><span>发布时间:</span>2018年01月22日 - 18时48分</p>
+        <p><span>最后更新:</span>2018年01月22日 - 19时46分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/12/23/D3-stacks/" title="D3-stacks">http://yoursite.com/2017/12/23/D3-stacks/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/23/D3-stacks/　　作者: 浦深" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/01/22/MyBatis笔记/" title="MyBatis笔记">http://yoursite.com/2018/01/22/MyBatis笔记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/01/22/MyBatis笔记/　　作者: 浦深" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -361,18 +375,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/12/31/ArcGIS-for-JavaScript之一：概述/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          ArcGIS for JavaScript --起步
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/17/Maven-配置/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Maven 配置</div>
+    <a href="/2018/01/22/PostgreSQL学习手册/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PostgreSQL学习手册</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -383,7 +388,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#构造stack"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x6784;&#x9020;stack" class="headerlink" title="&#x6784;&#x9020;stack"></a>&#x6784;&#x9020;stack</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DDL"><span class="toc-number">1.</span> <span class="toc-text"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#mapper-xml"><span class="toc-number">1.1.</span> <span class="toc-text"><a href="#mapper-xml" class="headerlink" title="mapper.xml"></a>mapper.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#和-的区别："><span class="toc-number">1.2.</span> <span class="toc-text"><a href="#&#x548C;-&#x7684;&#x533A;&#x522B;&#xFF1A;" class="headerlink" title="${}&#x548C;#{}&#x7684;&#x533A;&#x522B;&#xFF1A;"></a><code>${}</code>&#x548C;<code>#{}</code>&#x7684;&#x533A;&#x522B;&#xFF1A;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lt-foreach-gt-标签"><span class="toc-number">1.3.</span> <span class="toc-text"><a href="#lt-foreach-gt-&#x6807;&#x7B7E;" class="headerlink" title="&lt;foreach&gt;&#x6807;&#x7B7E;"></a><code>&lt;foreach&gt;</code>&#x6807;&#x7B7E;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dao"><span class="toc-number">1.4.</span> <span class="toc-text"><a href="#Dao" class="headerlink" title="Dao"></a>Dao</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -449,13 +454,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/12/31/ArcGIS-for-JavaScript之一：概述/" title="上一篇: ArcGIS for JavaScript --起步">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/12/17/Maven-配置/" title="下一篇: Maven 配置">
+            <a href="/2018/01/22/PostgreSQL学习手册/" title="下一篇: PostgreSQL学习手册">
                 <i class="fa fa-angle-right"></i>
             </a>
         
