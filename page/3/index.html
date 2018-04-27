@@ -229,188 +229,6 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-oralce-创建用户及分配表空间" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/14/oralce-创建用户及分配表空间/" class="article-date">
-      <time datetime="2017-12-14T01:51:14.000Z" itemprop="datePublished">2017-12-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/14/oralce-创建用户及分配表空间/">oralce 创建用户及分配表空间</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <a id="more"></a>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建用于angel用户的表空间</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLESPACE</span> angel</span><br><span class="line"><span class="keyword">DATAFILE</span> <span class="string">'G:\ProgramExercise\angel_data.dbf'</span></span><br><span class="line"><span class="keyword">SIZE</span> <span class="number">10</span>M</span><br><span class="line"><span class="keyword">AUTOEXTEND</span> <span class="keyword">ON</span> <span class="keyword">NEXT</span> <span class="number">5</span>M <span class="keyword">MAXSIZE</span> <span class="number">50</span>M;</span><br><span class="line"><span class="comment">--创建用于angel用户的临时表空间</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TEMPORARY</span> <span class="keyword">TABLESPACE</span> temp_data</span><br><span class="line">TEMPFILE <span class="string">'G:\ProgramExercise\tempdata.dbf'</span></span><br><span class="line"><span class="keyword">SIZE</span> <span class="number">10</span>M</span><br><span class="line"><span class="keyword">AUTOEXTEND</span> <span class="keyword">ON</span> <span class="keyword">NEXT</span> <span class="number">5</span>M <span class="keyword">MAXSIZE</span> <span class="number">50</span>M;</span><br><span class="line"><span class="comment">--创建angel用户</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> angel <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> m123</span><br><span class="line"><span class="keyword">DEFAULT</span> <span class="keyword">TABLESPACE</span> angel</span><br><span class="line"><span class="keyword">TEMPORARY</span> <span class="keyword">TABLESPACE</span> temp_data</span><br><span class="line"><span class="keyword">QUOTA</span> <span class="number">20</span>M <span class="keyword">ON</span> <span class="keyword">USERS</span>;</span><br><span class="line"><span class="comment">--为angel用户分配角色和权限</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">CONNECT</span> <span class="keyword">TO</span> angel;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">RESOURCE</span> <span class="keyword">TO</span> angel;</span><br></pre></td></tr></table></figure>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DB/">DB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/create-user/">create user</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/13/hello-world/" class="article-date">
-      <time datetime="2017-12-13T14:49:04.000Z" itemprop="datePublished">2017-12-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/13/hello-world/">hello world</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/12/13/hello-world/#more">谁与争锋 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-webstorm-中配置supervisor或者nodemon来发布Node服务" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/" class="article-date">
-      <time datetime="2017-12-12T08:18:34.000Z" itemprop="datePublished">2017-12-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/">webstorm 中配置supervisor或者nodemon来发布Node服务</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>在我们开发<code>php</code>，<code>java</code>等<code>web</code>项目的时候，修改了项目代码，服务器都会自动重启，让我们的改动生效，但是node并不会这样，必须手动去重启一下，这样很烦人的啊，很浪费时间，于是就有大神开发了自动重启的工具——<code>nodemon</code>或者<code>supervisor</code>，很简单的。<br>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a  href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/#more">谁与争锋 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-koa2-webpack-热更新" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -889,9 +707,76 @@
 
 
   
+    <article id="post-fecth-使用说明" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/11/27/fecth-使用说明/" class="article-date">
+      <time datetime="2017-11-27T02:26:49.000Z" itemprop="datePublished">2017-11-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/27/fecth-使用说明/">fecth 使用说明</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="安装与引入"><a href="#安装与引入" class="headerlink" title="安装与引入"></a>安装与引入</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install whatwg-fetch --save; </span><br><span class="line">or</span><br><span class="line">bower install fetch.</span><br><span class="line"></span><br><span class="line">import <span class="string">'whatwg-fetch'</span></span><br></pre></td></tr></table></figure>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/fecth/">fecth</a><a class="article-category-link" href="/categories/fecth/Promise/">Promise</a><a class="article-category-link" href="/categories/fecth/Promise/ES6/">ES6</a><a class="article-category-link" href="/categories/fecth/Promise/ES6/javascript/">javascript</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Promise/">Promise</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fecth/">fecth</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/11/27/fecth-使用说明/#more">谁与争锋 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
     </nav>
   
 </div>
