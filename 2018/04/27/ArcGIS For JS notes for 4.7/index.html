@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ArcGIS For JS notes for 4.7 | GISDOG&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="记录ArcGIS For JS 4.7版本的一些特性。">
+<meta name="keywords" content="AGS For JS,GIS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArcGIS For JS notes for 4.7">
+<meta property="og:url" content="http://yoursite.com/2018/04/27/ArcGIS For JS notes for 4.7/index.html">
+<meta property="og:site_name" content="GISDOG&#39;s Blog">
+<meta property="og:description" content="记录ArcGIS For JS 4.7版本的一些特性。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://giscrazier.github.io/resoures/images/notes_for_4.7/projection.gif">
+<meta property="og:image" content="https://giscrazier.github.io/resoures/images/notes_for_4.7/edges_type.png">
+<meta property="og:updated_time" content="2018-05-01T09:58:11.240Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ArcGIS For JS notes for 4.7">
+<meta name="twitter:description" content="记录ArcGIS For JS 4.7版本的一些特性。">
+<meta name="twitter:image" content="https://giscrazier.github.io/resoures/images/notes_for_4.7/projection.gif">
+  
+    <link rel="alternative" href="/atom.xml" title="GISDOG&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">浦深</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">不畏浮云遮望眼，只缘身在最高层。</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="https://giscrazier.github.io/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/categories">静心阅读</a></li>
+                        
+                            <li><a href="https://luuman.github.io/FrontEndGuideV2/FrontEndGuide/#/Index">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="mailto:yaoyinglong@hotmail.com" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/giscrazier" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/sky-gis" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="https://weibo.com/yaoyinglongv" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/AGS-For-JS/" style="font-size: 20px;">AGS For JS</a> <a href="/tags/ArcGIS/" style="font-size: 10px;">ArcGIS</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/D3/" style="font-size: 10px;">D3</a> <a href="/tags/DB/" style="font-size: 12.5px;">DB</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Decorator/" style="font-size: 10px;">Decorator</a> <a href="/tags/Descriptor/" style="font-size: 10px;">Descriptor</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/GIS/" style="font-size: 17.5px;">GIS</a> <a href="/tags/HOC/" style="font-size: 10px;">HOC</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/PostgreSQL/" style="font-size: 12.5px;">PostgreSQL</a> <a href="/tags/PowerDesigner/" style="font-size: 10px;">PowerDesigner</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/create-user/" style="font-size: 10px;">create user</a> <a href="/tags/create-react-app/" style="font-size: 10px;">create-react-app</a> <a href="/tags/es6/" style="font-size: 12.5px;">es6</a> <a href="/tags/fecth/" style="font-size: 10px;">fecth</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/koa/" style="font-size: 10px;">koa</a> <a href="/tags/koa-router/" style="font-size: 10px;">koa-router</a> <a href="/tags/koa2/" style="font-size: 10px;">koa2</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/postgis/" style="font-size: 10px;">postgis</a> <a href="/tags/react/" style="font-size: 15px;">react</a> <a href="/tags/react-app-rewired/" style="font-size: 10px;">react-app-rewired</a> <a href="/tags/react-router/" style="font-size: 15px;">react-router</a> <a href="/tags/react-router-dom/" style="font-size: 15px;">react-router-dom</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/stacks/" style="font-size: 10px;">stacks</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/代码样式/" style="font-size: 10px;">代码样式</a> <a href="/tags/修饰器/" style="font-size: 10px;">修饰器</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/属性描述符/" style="font-size: 10px;">属性描述符</a> <a href="/tags/服务端渲染/" style="font-size: 10px;">服务端渲染</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/空间索引/" style="font-size: 10px;">空间索引</a> <a href="/tags/类/" style="font-size: 10px;">类</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">浦深</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">浦深</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不畏浮云遮望眼，只缘身在最高层。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="https://giscrazier.github.io/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/categories">静心阅读</a></li>
+                
+                    <li><a href="https://luuman.github.io/FrontEndGuideV2/FrontEndGuide/#/Index">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="mailto:yaoyinglong@hotmail.com" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/giscrazier" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/sky-gis" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/yaoyinglongv" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-ArcGIS For JS notes for 4.7" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/04/27/ArcGIS For JS notes for 4.7/" class="article-date">
+      <time datetime="2018-04-27T06:14:46.000Z" itemprop="datePublished">2018-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ArcGIS For JS notes for 4.7
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/AGS-For-JS/">AGS For JS</a><a class="article-category-link" href="/categories/AGS-For-JS/GIS/">GIS</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AGS-For-JS/">AGS For JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIS/">GIS</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>记录ArcGIS For JS 4.7版本的一些特性。</p>
+<a id="more"></a>
+<h1 id="WebGL-rendering-updates"><a href="#WebGL-rendering-updates" class="headerlink" title="WebGL rendering updates"></a>WebGL rendering updates</h1><p>这些更新体现在<code>FeatureLayer</code>,<code>FeatureLayerView</code>,<code>TextSymbol</code>中。</p>
+<h2 id="FeatureLayer"><a href="#FeatureLayer" class="headerlink" title="FeatureLayer"></a><code>FeatureLayer</code></h2><p>性能提升，对于代码级别没啥可说的。</p>
+<h2 id="FeatureLayerView"><a href="#FeatureLayerView" class="headerlink" title="FeatureLayerView"></a><code>FeatureLayerView</code></h2><p><code>FeatureLayerView</code> 负责将<code>FeatureLayer</code>中的要素渲染进<code>view</code>中。并且<code>FeatureLayerView</code>提供了方法在<code>view</code>中查询和高亮<code>FeatureLayer</code>中的要素。</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
+<li><code>updating</code> readonly:<br>当图层处于更新状态的时候（如：正在获取数据），值为true。因此，我们可以监控这个这个属性，当它的值为 <code>true</code>时，表明它在获取数据，当它的值为<code>false</code>时，说明它获取数据成功。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lyr = <span class="keyword">new</span> FeatureLayer(&#123;</span><br><span class="line">  url: fsUrl  <span class="comment">// points to a Feature Service layer url</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//view的whenLayerView监控lyr所对应的LayerView创建成功时理解执行then</span></span><br><span class="line">view.whenLayerView(lyr).then(<span class="function"><span class="keyword">function</span>(<span class="params">lyrView</span>)</span>&#123;</span><br><span class="line">  lyrView.watch(<span class="string">"updating"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!val)&#123;  <span class="comment">// wait for the layer view to finish updating</span></span><br><span class="line">      lyrView.queryExtent().then(<span class="function"><span class="keyword">function</span>(<span class="params">results</span>)</span>&#123;</span><br><span class="line">        view.goTo(results.extent);  <span class="comment">// go to the extent of all the graphics in the layer view</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>highlight(target)</code>→<code>Object</code></li>
+</ul>
+<p>高亮指定的feature(s)<br>该方法是通过<code>objectID</code>来从当前的<code>view</code>中检索要被高亮的要素。因此可以传入<code>objectID</code>也可以串包含<code>objectID</code>的<code>graphics</code>.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> highlight;</span><br><span class="line">view.whenLayerView(treesLayer).then(<span class="function"><span class="keyword">function</span>(<span class="params">lyrView</span>)</span>&#123;</span><br><span class="line"> <span class="keyword">var</span> query = treesLayer.createQuery();</span><br><span class="line"> query.where = <span class="string">"type = 'Quercus'"</span>;</span><br><span class="line"> treesLayer.queryFeatures(query).then(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (highlight) &#123;</span><br><span class="line">     highlight.remove();</span><br><span class="line">   &#125;</span><br><span class="line">   highlight = lyrView.highlight(result.features);</span><br><span class="line"> &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>该方法的返回值中有一个<code>remove</code>方法用来清楚高亮显示。</p>
+<blockquote>
+<p>注: 在2D场景中，只支持<code>WebGL</code>渲染。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">var</span> dojoConfig = &#123;</span><br><span class="line">&gt;    has: &#123;</span><br><span class="line">&gt;     <span class="string">"esri-featurelayer-webgl"</span>: <span class="number">1</span></span><br><span class="line">&gt;    &#125;</span><br><span class="line">&gt;  &#125;;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>将上面的代码写在引入ArcGIS API for JavaScript之前即可。</p>
+</blockquote>
+<ul>
+<li><code>queryExtent(params)</code>， <code>queryFeatureCount(params)</code><br>计算 <strong>绘制到</strong> 当前视图的符合查询条件的要素的<code>Extent</code>和<code>Count</code>。如果想要计算该要素服务中符合查询条件的所有要素的<code>Extent</code>和<code>Count</code>则需要使用<code>FeatureLayer</code>类中对应的方法了。</li>
+</ul>
+<h2 id="TextSymbol"><a href="#TextSymbol" class="headerlink" title="TextSymbol"></a><code>TextSymbol</code></h2><p>开始支持在<code>FeatureLayer</code>中使用了。并且开始支持多行文本。</p>
+<p><code>TextSymbol</code>是用于定义<code>FeatureLayer</code>中<code>graphic</code>展示的<code>label</code>。可被用于点、线、面要素。</p>
+<h1 id="Client-side-projection"><a href="#Client-side-projection" class="headerlink" title="Client-side projection"></a>Client-side projection</h1><p>添加了新的模块<code>esri/geometry/projection</code>，提供了一个客户端投影转换引擎。</p>
+<p><img src="https://giscrazier.github.io/resoures/images/notes_for_4.7/projection.gif" alt="客户端投影转换"></p>
+<p>该某块的 <code>project → Geometry|Geometry[]</code> 方法即支持默认的投影转换方法，也支持自定义的投影转换方法。默认的投影转换方法可以通过<code>getTransformation</code>去查看，不同的投影之间的转换默认的方法是不一样的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">projectData</span>(<span class="params">wkid</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// convert polygons from WGS84 to the selected spatial reference</span></span><br><span class="line">  <span class="keyword">var</span> outSpatialReference = <span class="keyword">new</span> SpatialReference(&#123;</span><br><span class="line">    wkid: wkid</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// loop through the raw GeoJSON data, project the polygons,</span></span><br><span class="line">  <span class="comment">// and create array of graphics to be added to the view</span></span><br><span class="line">  <span class="keyword">const</span> graphics = jsonData.features.map(<span class="function"><span class="keyword">function</span> (<span class="params">feature, i</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// create a polygon from the raw GeoJSON specify its spatial reference</span></span><br><span class="line">    <span class="keyword">const</span> polygon = <span class="keyword">new</span> Polygon(&#123;</span><br><span class="line">      spatialReference: SpatialReference.WGS84</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// read the GeoJSON's geometry and add to the polygon rings</span></span><br><span class="line">    feature.geometry.coordinates.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">coord</span>) </span>&#123;</span><br><span class="line">      polygon.addRing(coord[<span class="number">0</span>]);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用默认的投影转换方法转换</span></span><br><span class="line">    <span class="keyword">const</span> projectedPolygon = projection.project(polygon, outSpatialReference);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用投影转换后的geometry去创建graphic</span></span><br><span class="line">    <span class="keyword">const</span> graphic = &#123;</span><br><span class="line">      geometry: projectedPolygon,</span><br><span class="line">      <span class="comment">// select only the attributes you care about</span></span><br><span class="line">      attributes: &#123;</span><br><span class="line">        ObjectID: i</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// check if the feature is continent or ocean and assign an appropriate symbol</span></span><br><span class="line">    graphic.symbol = feature.properties.CONTINENT != <span class="string">"Ocean"</span> ? createSymbol(<span class="string">"#31a354"</span>) :</span><br><span class="line">      createSymbol(<span class="string">"#2B65EC"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> graphic;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// re-create view and map</span></span><br><span class="line">  recreateView(graphics, outSpatialReference);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注： </p>
+<ol>
+<li>浏览器必须支持<code>WebAssembly</code></li>
+<li><a href="https://developers.arcgis.com/java/10-2/guide/datum-transformations.htm#ESRI_SECTION1_7635FE2A60E6449898D5AD0ADE2CA0C3" target="_blank" rel="noopener">仅支持基于方程的投影转换</a>。可参考<a href="http://desktop.arcgis.com/zh-cn/arcmap/latest/map/projections/geographic-transformation-methods.htm" target="_blank" rel="noopener">常用的投影转换方法</a></li>
+</ol>
+</blockquote>
+<h1 id="Mobile-support-in-3D"><a href="#Mobile-support-in-3D" class="headerlink" title="Mobile support in 3D"></a>Mobile support in 3D</h1><p>支持在手机上创建3D web 应用。<a href="https://developers.arcgis.com/javascript/latest/guide/system-requirements/index.html#hardware-requirements-for-3d" target="_blank" rel="noopener">硬件要求</a></p>
+<h1 id="Edge-rendering-for-3D-Object-SceneLayer"><a href="#Edge-rendering-for-3D-Object-SceneLayer" class="headerlink" title="Edge rendering for 3D Object SceneLayer"></a>Edge rendering for 3D Object SceneLayer</h1><p>在4.7版本中,通过渲染建筑物的轮廓边缘和挤压多边形来提升3D场景中对物体形状的感知。<br>esri新增了<code>esri/symbols/edges/Edges3D</code>为特定的<code>Symbol3DLayer</code>设置<code>edge</code>属性,便可激活边缘渲染还可以设置边缘的颜色。</p>
+<p>目前只支持两类边缘效果：<code>SolidEdges3D</code>和<code>SketchEdges3D</code></p>
+<p><img src="https://giscrazier.github.io/resoures/images/notes_for_4.7/edges_type.png" alt="边缘类型"></p>
+<blockquote>
+<p>注：</p>
+<ul>
+<li><code>FillSymbol3DLayer</code>的<code>edge</code>属性必须为<code>MeshSymbol3D</code></li>
+<li><code>ExtrudeSymbol3DLayer</code>的<code>edge</code>属性必须为<code>PolygonSymbol3D</code></li>
+</ul>
+</blockquote>
+<h1 id="Widget-updates"><a href="#Widget-updates" class="headerlink" title="Widget updates"></a>Widget updates</h1><h2 id="Coordinate-Conversion-widget"><a href="#Coordinate-Conversion-widget" class="headerlink" title="Coordinate Conversion widget"></a>Coordinate Conversion widget</h2><p>该widget展示了在所选择的坐标系下的用户鼠标位置。默认情况下，该组件如下坐标格式：</p>
+<ul>
+<li>XY - Longitude, Latitude (WGS84)</li>
+<li>MGRS - Military Grid Reference System</li>
+<li>UTM - Universal Transverse Mercator</li>
+<li>DD - Decimal Degrees</li>
+<li>DDM - Degrees Decimal Minutes</li>
+<li>DMS - Degrees Minutes Seconds</li>
+<li>Basemap - X, Y in the coordinate system used by the current Basemap in the units used by the Basemap. Web Mercator is the standard for Esri-provided basemaps.</li>
+</ul>
+<p>将该组件添加到我们的代码中很简单：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ccWidget = <span class="keyword">new</span> CoordinateConversion(&#123;</span><br><span class="line">  view: view</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Adds widget in the bottom left corner of the view</span></span><br><span class="line">view.ui.add(ccWidget, <span class="string">"bottom-left"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>除了这些默认的格式外，我们还可以自定义格式。</p>
+<ul>
+<li>定义一个转换函数和一个逆转换函数</li>
+<li>或者，定义一个空间参考和一个逆转换函数</li>
+<li>必要的时候可以使用<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-tasks-GeometryService.html" target="_blank" rel="noopener">Geometry Service</a>来进行投影转换。</li>
+</ul>
+<p><a href="https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=widgets-coordinateconversion-custom" target="_blank" rel="noopener">参考示例</a>:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=1, maximum-scale=1,user-scalable=no"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>CoordinateConversion widget - Custom Formats - 4.7<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://js.arcgis.com/4.7/esri/css/main.css"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    html,</span></span><br><span class="line"><span class="undefined">    body,</span></span><br><span class="line"><span class="css">    <span class="selector-id">#viewDiv</span> &#123;</span></span><br><span class="line"><span class="undefined">      padding: 0;</span></span><br><span class="line"><span class="undefined">      margin: 0;</span></span><br><span class="line"><span class="undefined">      height: 100%;</span></span><br><span class="line"><span class="undefined">      width: 100%;</span></span><br><span class="line"><span class="undefined">      overflow: hidden;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://js.arcgis.com/4.7/"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">require</span>([</span></span><br><span class="line"><span class="javascript">      <span class="string">"esri/Map"</span>,</span></span><br><span class="line"><span class="javascript">      <span class="string">"esri/views/SceneView"</span>,</span></span><br><span class="line"><span class="javascript">      <span class="string">"esri/widgets/CoordinateConversion"</span>,</span></span><br><span class="line"><span class="javascript">      <span class="string">"esri/widgets/CoordinateConversion/support/Format"</span>,</span></span><br><span class="line"><span class="javascript">      <span class="string">"esri/widgets/CoordinateConversion/support/Conversion"</span>,</span></span><br><span class="line"><span class="javascript">      <span class="string">"esri/geometry/Point"</span>,</span></span><br><span class="line"><span class="javascript">      <span class="string">"esri/geometry/support/webMercatorUtils"</span>,</span></span><br><span class="line"><span class="javascript">      <span class="string">"esri/geometry/SpatialReference"</span>,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="string">"dojo/domReady!"</span></span></span><br><span class="line"><span class="javascript">    ], <span class="function"><span class="keyword">function</span>(<span class="params"></span></span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">Map</span>, SceneView, CoordinateConversion, Format, Conversion,</span></span><br><span class="line"><span class="undefined">      Point, webMercatorUtils, SpatialReference</span></span><br><span class="line"><span class="undefined">    ) &#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>(&#123;</span></span><br><span class="line"><span class="javascript">        basemap: <span class="string">"hybrid"</span>,</span></span><br><span class="line"><span class="javascript">        ground: <span class="string">"world-elevation"</span></span></span><br><span class="line"><span class="undefined">      &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> view = <span class="keyword">new</span> SceneView(&#123;</span></span><br><span class="line"><span class="javascript">        container: <span class="string">"viewDiv"</span>,</span></span><br><span class="line"><span class="undefined">        map: map,</span></span><br><span class="line"><span class="javascript">        <span class="comment">// Clip the view to the extent covered by</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// by NAD 1983 HARN StatePlane California I</span></span></span><br><span class="line"><span class="undefined">        clippingArea: &#123;</span></span><br><span class="line"><span class="undefined">          xmin: -124.45,</span></span><br><span class="line"><span class="undefined">          xmax: -119.99,</span></span><br><span class="line"><span class="undefined">          ymax: 43.01,</span></span><br><span class="line"><span class="undefined">          ymin: 39.59</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        center: &#123;</span></span><br><span class="line"><span class="undefined">          x: -122.22,</span></span><br><span class="line"><span class="undefined">          y: 41.3</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        zoom: 10,</span></span><br><span class="line"><span class="javascript">        viewingMode: <span class="string">"local"</span></span></span><br><span class="line"><span class="undefined">      &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      view.when(<span class="function"><span class="keyword">function</span>(<span class="params">view</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">        view.goTo(&#123;</span></span><br><span class="line"><span class="undefined">          tilt: 45</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">      &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> ccWidget = <span class="keyword">new</span> CoordinateConversion(&#123;</span></span><br><span class="line"><span class="undefined">        view: view</span></span><br><span class="line"><span class="undefined">      &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      view.ui.add(ccWidget, <span class="string">"top-right"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="comment">// Regular expression to find a number</span></span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> numberSearchPattern = <span class="regexp">/-?\d+[\.]?\d*/</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">      /**</span></span><br><span class="line"><span class="xml">       * Create a new Format called XYZ, which looks like: "<span class="tag">&lt;<span class="name">Latitude</span>&gt;</span>, <span class="tag">&lt;<span class="name">Longitude</span>&gt;</span>, <span class="tag">&lt;<span class="name">Z</span>&gt;</span>"</span></span><br><span class="line"><span class="undefined">       *</span></span><br><span class="line"><span class="javascript">       * We need to define a convert <span class="function"><span class="keyword">function</span>, <span class="title">a</span> <span class="title">reverse</span> <span class="title">convert</span> <span class="title">function</span>,</span></span></span><br><span class="line"><span class="undefined">       * and some formatting information.</span></span><br><span class="line"><span class="undefined">       */</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> newFormat = <span class="keyword">new</span> Format(&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// The format's name should be unique with respect to other formats used by the widget</span></span></span><br><span class="line"><span class="javascript">        name: <span class="string">"XYZ"</span>,</span></span><br><span class="line"><span class="undefined">        conversionInfo: &#123;</span></span><br><span class="line"><span class="javascript">          <span class="comment">// Define a convert function</span></span></span><br><span class="line"><span class="javascript">          <span class="comment">// Point -&gt; Position</span></span></span><br><span class="line"><span class="javascript">          convert: <span class="function"><span class="keyword">function</span>(<span class="params">point</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> returnPoint = point.spatialReference.isWGS84 ? point :</span></span><br><span class="line"><span class="undefined">              webMercatorUtils.webMercatorToGeographic(point);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> x = returnPoint.x.toFixed(<span class="number">4</span>);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> y = returnPoint.y.toFixed(<span class="number">4</span>);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> z = returnPoint.z.toFixed(<span class="number">4</span>);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="undefined">              location: returnPoint,</span></span><br><span class="line"><span class="javascript">              coordinate: <span class="string">`<span class="subst">$&#123;x&#125;</span>, <span class="subst">$&#123;y&#125;</span>, <span class="subst">$&#123;z&#125;</span>`</span></span></span><br><span class="line"><span class="undefined">            &#125;;</span></span><br><span class="line"><span class="undefined">          &#125;,</span></span><br><span class="line"><span class="javascript">          <span class="comment">// Define a reverse convert function</span></span></span><br><span class="line"><span class="javascript">          <span class="comment">// String -&gt; Point </span></span></span><br><span class="line"><span class="javascript">          reverseConvert: <span class="function"><span class="keyword">function</span>(<span class="params">string</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> parts = string.split(<span class="string">","</span>)</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="keyword">new</span> Point(&#123;</span></span><br><span class="line"><span class="javascript">              x: <span class="built_in">parseFloat</span>(parts[<span class="number">0</span>]),</span></span><br><span class="line"><span class="javascript">              y: <span class="built_in">parseFloat</span>(parts[<span class="number">1</span>]),</span></span><br><span class="line"><span class="javascript">              z: <span class="built_in">parseFloat</span>(parts[<span class="number">2</span>]),</span></span><br><span class="line"><span class="undefined">              spatialReference: &#123;</span></span><br><span class="line"><span class="undefined">                wkid: 4326</span></span><br><span class="line"><span class="undefined">              &#125;</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="javascript">        <span class="comment">// Define each segment of the coordinate</span></span></span><br><span class="line"><span class="undefined">        coordinateSegments: [</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="javascript">          alias: <span class="string">"X"</span>,</span></span><br><span class="line"><span class="javascript">          description: <span class="string">"Longitude"</span>,</span></span><br><span class="line"><span class="undefined">          searchPattern: numberSearchPattern</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="javascript">          alias: <span class="string">"Y"</span>,</span></span><br><span class="line"><span class="javascript">          description: <span class="string">"Latitude"</span>,</span></span><br><span class="line"><span class="undefined">          searchPattern: numberSearchPattern</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="javascript">          alias: <span class="string">"Z"</span>,</span></span><br><span class="line"><span class="javascript">          description: <span class="string">"Elevation"</span>,</span></span><br><span class="line"><span class="undefined">          searchPattern: numberSearchPattern</span></span><br><span class="line"><span class="undefined">        &#125;],</span></span><br><span class="line"><span class="javascript">        defaultPattern: <span class="string">"X°, Y°, Z"</span></span></span><br><span class="line"><span class="undefined">      &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="comment">// add our new format to the widget's dropdown</span></span></span><br><span class="line"><span class="undefined">      ccWidget.formats.add(newFormat);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">      /**</span></span><br><span class="line"><span class="javascript">       * Create a <span class="keyword">new</span> Format <span class="string">'SPS I'</span>, which looks like: <span class="string">"&lt;X&gt;, &lt;Y&gt;"</span> <span class="keyword">in</span> the</span></span><br><span class="line"><span class="undefined">       * California StatePlane Zone I Spatial Reference, described by wkid 102241</span></span><br><span class="line"><span class="undefined">       *</span></span><br><span class="line"><span class="javascript">       * For <span class="keyword">this</span> Format, we only need to provide a spatialReference <span class="keyword">with</span> the correct</span></span><br><span class="line"><span class="javascript">       * wkid. The geometry service can take care <span class="keyword">of</span> the rest.</span></span><br><span class="line"><span class="undefined">       */</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> stateplaneCA = <span class="keyword">new</span> Format(&#123;</span></span><br><span class="line"><span class="javascript">        name: <span class="string">"SPS I"</span>,</span></span><br><span class="line"><span class="undefined">        conversionInfo: &#123;</span></span><br><span class="line"><span class="javascript">          spatialReference: <span class="keyword">new</span> SpatialReference(&#123;</span></span><br><span class="line"><span class="undefined">            wkid: 102241</span></span><br><span class="line"><span class="undefined">          &#125;),</span></span><br><span class="line"><span class="javascript">          reverseConvert: <span class="function"><span class="keyword">function</span>(<span class="params">string, format</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> parts = string.split(<span class="string">","</span>)</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="keyword">new</span> Point(&#123;</span></span><br><span class="line"><span class="javascript">              x: <span class="built_in">parseFloat</span>(parts[<span class="number">0</span>]),</span></span><br><span class="line"><span class="javascript">              y: <span class="built_in">parseFloat</span>(parts[<span class="number">1</span>]),</span></span><br><span class="line"><span class="undefined">              spatialReference: &#123;</span></span><br><span class="line"><span class="undefined">                wkid: 102241</span></span><br><span class="line"><span class="undefined">              &#125;</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        coordinateSegments: [</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="javascript">          alias: <span class="string">"X"</span>,</span></span><br><span class="line"><span class="javascript">          description: <span class="string">"easting"</span>,</span></span><br><span class="line"><span class="undefined">          searchPattern: numberSearchPattern</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="javascript">          alias: <span class="string">"Y"</span>,</span></span><br><span class="line"><span class="javascript">          description: <span class="string">"northing"</span>,</span></span><br><span class="line"><span class="undefined">          searchPattern: numberSearchPattern</span></span><br><span class="line"><span class="undefined">        &#125;],</span></span><br><span class="line"><span class="javascript">        defaultPattern: <span class="string">"X, Y"</span></span></span><br><span class="line"><span class="undefined">      &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="comment">// Add our new format to the widget's dropdown</span></span></span><br><span class="line"><span class="undefined">      ccWidget.formats.add(stateplaneCA);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="comment">// Add the two custom formats to the top of the widget's display</span></span></span><br><span class="line"><span class="undefined">      ccWidget.conversions.splice(0, 0,</span></span><br><span class="line"><span class="javascript">        <span class="keyword">new</span> Conversion(&#123;</span></span><br><span class="line"><span class="undefined">          format: newFormat</span></span><br><span class="line"><span class="undefined">        &#125;),</span></span><br><span class="line"><span class="javascript">        <span class="keyword">new</span> Conversion(&#123;</span></span><br><span class="line"><span class="undefined">          format: stateplaneCA</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">      );</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">"calcite"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"viewDiv"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="3D-Area-Measurement-widget"><a href="#3D-Area-Measurement-widget" class="headerlink" title="3D Area Measurement widget"></a>3D Area Measurement widget</h2><p><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-AreaMeasurement3D.html" target="_blank" rel="noopener">AreaMeasurement3D</a> 微件可用于在3D场景中测量面积和周长。</p>
+<p><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-DirectLineMeasurement3D.html" target="_blank" rel="noopener">DirectLineMeasurement3D</a> 微件可用于在3D场景中测量垂直、水平方向的距离和亮点之间的直线方向。可用于分析两个地址之间的相对高差。</p>
+<blockquote>
+<p>注： 当view.padding被设置了如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt;       <span class="keyword">var</span> view = <span class="keyword">new</span> MapView(&#123;</span><br><span class="line">&gt;         container: <span class="string">"viewDiv"</span>,</span><br><span class="line">&gt;         map: map,</span><br><span class="line">&gt;         center: [<span class="number">-74.045459</span>, <span class="number">40.690083</span>], <span class="comment">// Liberty Island, NY, USA</span></span><br><span class="line">&gt;         zoom: <span class="number">16</span>,</span><br><span class="line">&gt;         padding: &#123;</span><br><span class="line">&gt;           right: <span class="number">320</span> <span class="comment">// Same value as the #sidebar width in CSS</span></span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;       &#125;);</span><br><span class="line">&gt;       <span class="comment">//或者</span></span><br><span class="line">&gt;       <span class="comment">//view.padding.right = 320;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>AreaMeasurement3D和DirectLineMeasurement3D便都不能使用。</p>
+</blockquote>
+<h2 id="Legend-widget-card-style"><a href="#Legend-widget-card-style" class="headerlink" title="Legend widget card style"></a>Legend widget card style</h2><p>为<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html" target="_blank" rel="noopener">Legend</a>的<code>style</code>属性添加了一个<code>card</code>选项。<code>card</code>样式可以根据<code>view</code>的大小来显示不同的布局，对于手机来说很方便。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> legend = <span class="keyword">new</span> Legend(&#123;</span><br><span class="line">  view: view,</span><br><span class="line">  style: <span class="string">"card"</span>  <span class="comment">// other styles include 'classic'</span></span><br><span class="line">&#125;);</span><br><span class="line">view.ui.add(legend, <span class="string">"bottom-left"</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="LayerList-updates"><a href="#LayerList-updates" class="headerlink" title="LayerList updates"></a>LayerList updates</h2><p>为<code>LayerList</code>微件的<code>ListItem</code>添加<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItem.html#panel" target="_blank" rel="noopener"><code>panels</code></a>属性，以允许向图层列表中添加widgets，text，DOM元素等自定义内容。<br><code>panels</code>是<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html" target="_blank" rel="noopener"><code>ListItemPanel</code></a>的实例。<code>ListItemPanel</code>对象不能被实例化，它只是用来定义<code>panels</code>的格式 .<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> layerList = <span class="keyword">new</span> LayerList(&#123;</span><br><span class="line">  view: view</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// Adds widget below other elements in the top left corner of the view</span></span><br><span class="line">view.ui.add(layerList, &#123;</span><br><span class="line">  position: <span class="string">"top-left"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><code>listItemCreatedFunction</code>属性用于访问每个<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItem.html" target="_blank" rel="noopener"><code>ListItem</code></a>,可以通过它来改变每个<code>ListItem</code>相应的属性，通过<code>ListItem</code>的<code>actionsSections</code>属性可以为为<code>ListItem</code>添加<code>action</code>。<br>还可以对<code>LayerList</code>进行自定义操作：</p>
+<ul>
+<li><a href="https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=widgets-layerlist-actions" target="_blank" rel="noopener">为<code>LayerList</code>定义相应的<code>action</code></a>。</li>
+</ul>
+<p><code>LayerList</code>提供了<code>trigger-action</code>事件来处理<code>action</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义LayerList</span></span><br><span class="line"><span class="keyword">var</span> layerList = <span class="keyword">new</span> LayerList(&#123;</span><br><span class="line">  view: view,</span><br><span class="line">  <span class="comment">// executes for each ListItem in the LayerList</span></span><br><span class="line">  listItemCreatedFunction: defineActions</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defineActions</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// The event object contains an item property.</span></span><br><span class="line">  <span class="comment">// s a ListItem referencing the associated layer</span></span><br><span class="line">  <span class="comment">// and other properties. You can control the visibility of the</span></span><br><span class="line">  <span class="comment">// item, its title, and actions using this object.</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> item = event.item;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (item.title === <span class="string">"US Demographics"</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// An array of objects defining actions to place in the LayerList.</span></span><br><span class="line">    <span class="comment">// By making this array two-dimensional, you can separate similar</span></span><br><span class="line">    <span class="comment">// actions into separate groups with a breaking line.</span></span><br><span class="line"></span><br><span class="line">    item.actionsSections = [</span><br><span class="line">      [&#123;</span><br><span class="line">        title: <span class="string">"Go to full extent"</span>,</span><br><span class="line">        className: <span class="string">"esri-icon-zoom-out-fixed"</span>,</span><br><span class="line">        id: <span class="string">"full-extent"</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        title: <span class="string">"Layer information"</span>,</span><br><span class="line">        className: <span class="string">"esri-icon-description"</span>,</span><br><span class="line">        id: <span class="string">"information"</span></span><br><span class="line">      &#125;], [&#123;</span><br><span class="line">        title: <span class="string">"Increase opacity"</span>,</span><br><span class="line">        className: <span class="string">"esri-icon-up"</span>,</span><br><span class="line">        id: <span class="string">"increase-opacity"</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        title: <span class="string">"Decrease opacity"</span>,</span><br><span class="line">        className: <span class="string">"esri-icon-down"</span>,</span><br><span class="line">        id: <span class="string">"decrease-opacity"</span></span><br><span class="line">      &#125;]</span><br><span class="line">    ];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用trigger-action事件为每个action添加事件处理程序</span></span><br><span class="line">layerList.on(<span class="string">"trigger-action"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// The layer visible in the view at the time of the trigger.</span></span><br><span class="line">  <span class="keyword">var</span> visibleLayer = USALayer.visible ? USALayer : censusLayer;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Capture the action id.</span></span><br><span class="line">  <span class="keyword">var</span> id = event.action.id;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (id === <span class="string">"full-extent"</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// If the full-extent action is triggered then navigate</span></span><br><span class="line">    <span class="comment">// to the full extent of the visible layer.</span></span><br><span class="line">    view.goTo(visibleLayer.fullExtent);</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (id === <span class="string">"information"</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// If the information action is triggered, then</span></span><br><span class="line">    <span class="comment">// open the item details page of the service layer.</span></span><br><span class="line">    <span class="built_in">window</span>.open(visibleLayer.url);</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (id === <span class="string">"increase-opacity"</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// If the increase-opacity action is triggered, then</span></span><br><span class="line">    <span class="comment">// increase the opacity of the GroupLayer by 0.25.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (demographicGroupLayer.opacity &lt; <span class="number">1</span>) &#123;</span><br><span class="line">      demographicGroupLayer.opacity += <span class="number">0.25</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (id === <span class="string">"decrease-opacity"</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// If the decrease-opacity action is triggered, then</span></span><br><span class="line">    <span class="comment">// decrease the opacity of the GroupLayer by 0.25.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (demographicGroupLayer.opacity &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      demographicGroupLayer.opacity -= <span class="number">0.25</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><a href="https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=widgets-layerlist-legend" target="_blank" rel="noopener">合并<code>LayerList</code>和<code>Legend</code>微件</a></li>
+</ul>
+<p><code>LayerList</code>微件的新属性<code>panels</code>，允许向图层列表中添加其他微件，这里将<code>Legend</code>微件添加到<code>LayerList</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Add a legend instance to the panel of a</span></span><br><span class="line"><span class="comment">// ListItem in a LayerList instance</span></span><br><span class="line"><span class="keyword">const</span> layerList = <span class="keyword">new</span> LayerList(&#123;</span><br><span class="line">  view: view,</span><br><span class="line">  listItemCreatedFunction: <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> item = event.item;</span><br><span class="line">    item.panel = &#123;</span><br><span class="line">      content: <span class="string">"legend"</span>,</span><br><span class="line">      open: <span class="literal">true</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">view.ui.add(layerList, <span class="string">"top-right"</span>);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p><a href="https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=featurelayerview-query-stats" target="_blank" rel="noopener">在<code>LayerList</code>中添加图表和文字</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> layerList = <span class="keyword">new</span> LayerList(&#123;</span><br><span class="line">  view: view,</span><br><span class="line">  container: <span class="built_in">document</span>.createElement(<span class="string">"div"</span>),</span><br><span class="line">  listItemCreatedFunction: <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> item = event.item;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// add the pie chart to the Predominance layer list item panel</span></span><br><span class="line">    <span class="keyword">if</span>(item.title === predominanceLayer.title)&#123;</span><br><span class="line">      item.panel = &#123;</span><br><span class="line">        content: [</span><br><span class="line">          [ <span class="string">"&lt;b&gt;Educational attainment&lt;/b&gt; refers to the highest level of education that an individual has completed. "</span>,</span><br><span class="line">            <span class="string">"This chart categorizes the population living within the current "</span>,</span><br><span class="line">            <span class="string">"view extent by their educational attainment."</span></span><br><span class="line">          ].join(<span class="string">""</span>),</span><br><span class="line"></span><br><span class="line">          <span class="built_in">document</span>.createElement(<span class="string">"canvas"</span>),</span><br><span class="line"></span><br><span class="line">          [ <span class="string">"Notice that while one attainment level appears to dominate certain regions, it doesn't "</span>,</span><br><span class="line">            <span class="string">"necessarily mean it represents the majority of the population. In fact, as "</span>,</span><br><span class="line">            <span class="string">"you explore most areas, you will find the predominant educational attainment makes up "</span>,</span><br><span class="line">            <span class="string">"just a fraction of the population due to the number of categories considered."</span></span><br><span class="line">          ].join(<span class="string">""</span>)</span><br><span class="line">        ],</span><br><span class="line">        className: <span class="string">"esri-icon-pie-chart"</span>,</span><br><span class="line">        open: item.visible</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">layerList.container.style = <span class="string">"height: 100%"</span>;</span><br><span class="line"><span class="keyword">let</span> panelDiv = <span class="built_in">document</span>.getElementById(<span class="string">"panel"</span>);</span><br><span class="line">panelDiv.appendChild(layerList.container);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://developers.arcgis.com/javascript/latest/sample-code/visualization-sm-sublayer/index.html" target="_blank" rel="noopener">在<code>LayerList</code>中添加多种类型的内容</a></p>
+</li>
+</ul>
+<h2 id="Draw-updates"><a href="#Draw-updates" class="headerlink" title="Draw updates"></a>Draw updates</h2><h2 id="Custom-builds-with-npm-and-webpacks"><a href="#Custom-builds-with-npm-and-webpacks" class="headerlink" title="Custom builds with npm and webpacks"></a>Custom builds with npm and webpacks</h2><p>现在可以直接使用<code>npm</code>和<code>webpack</code>直接下载和打包ArcGIS API for JavaScript了。但是我发现下载的API有近30M，还是觉得有点太大，不适合这样的方式。为了方便ArcGIS API for JavaScript与ES6更好的结合使用，这里推荐<a href="https://github.com/giscrazier/importEsriModel" target="_blank" rel="noopener"><code>esri-import</code></a>.该中间件利用ES6的<code>Decorator</code>将ArcGIS API for JavaScript的模块注入到相应的类中。</p>
+<h2 id="Better-support-for-ES-promises"><a href="#Better-support-for-ES-promises" class="headerlink" title="Better support for ES promises"></a>Better support for ES promises</h2><p>以前的版本不支持ES6的Promise，从4.7开始完全兼容ES6的Promise</p>
+<h2 id="Smart-Mapping-updates"><a href="#Smart-Mapping-updates" class="headerlink" title="Smart Mapping updates"></a>Smart Mapping updates</h2><p>Smart Mapping目前支持<code>Feature Collections</code>,<code>Arcade expressions</code>,<code>CSVLayer</code>等三种渲染器。</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/04/27/ArcGIS For JS notes for 4.7/">ArcGIS For JS notes for 4.7</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 浦深 的个人博客">浦深</a></p>
+        <p><span>发布时间:</span>2018年04月27日 - 14时14分</p>
+        <p><span>最后更新:</span>2018年05月01日 - 17时58分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/27/ArcGIS For JS notes for 4.7/" title="ArcGIS For JS notes for 4.7">http://yoursite.com/2018/04/27/ArcGIS For JS notes for 4.7/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/04/27/ArcGIS For JS notes for 4.7/　　作者: 浦深" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/05/01/自定义create-react-app-配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          自定义create-react-app 配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/01/JavaScript-属性描述符/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript 属性描述符</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#WebGL-rendering-updates"><span class="toc-number">1.</span> <span class="toc-text">WebGL rendering updates</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#FeatureLayer"><span class="toc-number">1.1.</span> <span class="toc-text">FeatureLayer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FeatureLayerView"><span class="toc-number">1.2.</span> <span class="toc-text">FeatureLayerView</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-number">1.2.1.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-number">1.2.2.</span> <span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TextSymbol"><span class="toc-number">1.3.</span> <span class="toc-text">TextSymbol</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Client-side-projection"><span class="toc-number">2.</span> <span class="toc-text">Client-side projection</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mobile-support-in-3D"><span class="toc-number">3.</span> <span class="toc-text">Mobile support in 3D</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Edge-rendering-for-3D-Object-SceneLayer"><span class="toc-number">4.</span> <span class="toc-text">Edge rendering for 3D Object SceneLayer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Widget-updates"><span class="toc-number">5.</span> <span class="toc-text">Widget updates</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Coordinate-Conversion-widget"><span class="toc-number">5.1.</span> <span class="toc-text">Coordinate Conversion widget</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3D-Area-Measurement-widget"><span class="toc-number">5.2.</span> <span class="toc-text">3D Area Measurement widget</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Legend-widget-card-style"><span class="toc-number">5.3.</span> <span class="toc-text">Legend widget card style</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LayerList-updates"><span class="toc-number">5.4.</span> <span class="toc-text">LayerList updates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Draw-updates"><span class="toc-number">5.5.</span> <span class="toc-text">Draw updates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Custom-builds-with-npm-and-webpacks"><span class="toc-number">5.6.</span> <span class="toc-text">Custom builds with npm and webpacks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Better-support-for-ES-promises"><span class="toc-number">5.7.</span> <span class="toc-text">Better support for ES promises</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Smart-Mapping-updates"><span class="toc-number">5.8.</span> <span class="toc-text">Smart Mapping updates</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'giscrazier',
+      repo: 'giscrazier.github.io',
+      oauth: {
+        client_id: 'ba07027bd3a88b035f4e',
+        client_secret: 'b29acd991ccff9f186531239e81cd19fd4a0f5b5',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/05/01/自定义create-react-app-配置/" title="上一篇: 自定义create-react-app 配置">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/03/01/JavaScript-属性描述符/" title="下一篇: JavaScript 属性描述符">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/03/ArcGIS-For-JavaScript-小知识点篇/">ArcGIS For JavaScript 小知识点篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/03/arcgis-for-js-样式篇/">ArcGIS for JavaScript 样式篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/02/ArcGIS-for-JavaScript config篇/">ArcGIS-for-JavaScript config篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/自定义create-react-app-配置/">自定义create-react-app 配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/27/ArcGIS For JS notes for 4.7/">ArcGIS For JS notes for 4.7</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/01/JavaScript-属性描述符/">JavaScript 属性描述符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/28/ES6时代还需要学习原型链吗？/">ES6时代还需要学习原型链吗？</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/11/ES6-修饰器/">ES6 -修饰器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/06/CSS-居中/">CSS 居中</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/22/MyBatis笔记/">MyBatis笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/22/PostgreSQL学习手册/">PostgreSQL学习手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/19/PostgreSQL笔记/">postgresql笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/17/PostGis空间索引/">PostGis空间索引</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/17/arcgisserver-忘记manager用户名和密码修改方法/">arcgisserver 忘记manager用户名和密码修改方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/SQL中over用法大全/">SQL中over用法大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/15/ArcGIS-For-JS之二：与React集成/">ArcGIS For JS之二——与React集成</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/09/React-高阶组件/">React-高阶组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/04/获取代码样式/">获取代码样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/31/ArcGIS-for-JavaScript之一：概述/">ArcGIS for JavaScript --起步</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/23/D3-stacks/">D3-stacks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/17/Maven-配置/">Maven 配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/14/利用PowerDesigner将表导入到数据库/">利用PowerDesigner将表导入到数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/14/oralce-创建用户及分配表空间/">oralce 创建用户及分配表空间</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/13/hello-world/">hello world</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/">webstorm 中配置supervisor或者nodemon来发布Node服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/koa2-webpack-热更新/">koa2 + webpack 热更新</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/玩转-React-服务器端渲染/">玩转 React 服务器端渲染</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/03/JavaScript获取页面宽度高度大全/">JavaScript获取页面宽度高度大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/01/koa-router-学习笔记/">koa-router 学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/React-Router：从V2-V3迁移到V4/">React Router：从V2/V3迁移到V4</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/react-router4升级踩坑/">react-router4升级踩坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/Redux/">Redux</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/fecth-使用说明/">fecth 使用说明</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 浦深
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >登峰者数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        /*(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');*/
+	      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+		      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+		      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+	      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+	      _st('install','5P_GxzX1uzs-2gtMJ-qy','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

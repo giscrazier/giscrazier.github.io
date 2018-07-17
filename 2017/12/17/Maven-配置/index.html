@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Maven 配置 | GISDOG&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Maven 是一个软件项目管理工具，基于项目对象模型POM的概念。Maven可用来管理项目依赖、编译、文档等信息。">
+<meta name="keywords" content="maven">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven 配置">
+<meta property="og:url" content="http://yoursite.com/2017/12/17/Maven-配置/index.html">
+<meta property="og:site_name" content="GISDOG&#39;s Blog">
+<meta property="og:description" content="Maven 是一个软件项目管理工具，基于项目对象模型POM的概念。Maven可用来管理项目依赖、编译、文档等信息。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://giscrazier.github.io/resoures/images/maven_cfg/m2_home.jpg">
+<meta property="og:image" content="https://giscrazier.github.io/resoures/images/maven_cfg/path.jpg">
+<meta property="og:image" content="https://giscrazier.github.io/resoures/images/maven_cfg/archetype-webapp.jpg">
+<meta property="og:image" content="https://giscrazier.github.io/resoures/images/maven_cfg/refresh.jpg">
+<meta property="og:updated_time" content="2017-12-17T16:08:37.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Maven 配置">
+<meta name="twitter:description" content="Maven 是一个软件项目管理工具，基于项目对象模型POM的概念。Maven可用来管理项目依赖、编译、文档等信息。">
+<meta name="twitter:image" content="https://giscrazier.github.io/resoures/images/maven_cfg/m2_home.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="GISDOG&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">浦深</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">不畏浮云遮望眼，只缘身在最高层。</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="https://giscrazier.github.io/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/categories">静心阅读</a></li>
+                        
+                            <li><a href="https://luuman.github.io/FrontEndGuideV2/FrontEndGuide/#/Index">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="mailto:yaoyinglong@hotmail.com" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/giscrazier" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/sky-gis" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="https://weibo.com/yaoyinglongv" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/AGS-For-JS/" style="font-size: 20px;">AGS For JS</a> <a href="/tags/ArcGIS/" style="font-size: 10px;">ArcGIS</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/D3/" style="font-size: 10px;">D3</a> <a href="/tags/DB/" style="font-size: 12.5px;">DB</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Decorator/" style="font-size: 10px;">Decorator</a> <a href="/tags/Descriptor/" style="font-size: 10px;">Descriptor</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/GIS/" style="font-size: 17.5px;">GIS</a> <a href="/tags/HOC/" style="font-size: 10px;">HOC</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/PostgreSQL/" style="font-size: 12.5px;">PostgreSQL</a> <a href="/tags/PowerDesigner/" style="font-size: 10px;">PowerDesigner</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/create-user/" style="font-size: 10px;">create user</a> <a href="/tags/create-react-app/" style="font-size: 10px;">create-react-app</a> <a href="/tags/es6/" style="font-size: 12.5px;">es6</a> <a href="/tags/fecth/" style="font-size: 10px;">fecth</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/koa/" style="font-size: 10px;">koa</a> <a href="/tags/koa-router/" style="font-size: 10px;">koa-router</a> <a href="/tags/koa2/" style="font-size: 10px;">koa2</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/postgis/" style="font-size: 10px;">postgis</a> <a href="/tags/react/" style="font-size: 15px;">react</a> <a href="/tags/react-app-rewired/" style="font-size: 10px;">react-app-rewired</a> <a href="/tags/react-router/" style="font-size: 15px;">react-router</a> <a href="/tags/react-router-dom/" style="font-size: 15px;">react-router-dom</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/stacks/" style="font-size: 10px;">stacks</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/代码样式/" style="font-size: 10px;">代码样式</a> <a href="/tags/修饰器/" style="font-size: 10px;">修饰器</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/属性描述符/" style="font-size: 10px;">属性描述符</a> <a href="/tags/服务端渲染/" style="font-size: 10px;">服务端渲染</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/空间索引/" style="font-size: 10px;">空间索引</a> <a href="/tags/类/" style="font-size: 10px;">类</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">浦深</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">浦深</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不畏浮云遮望眼，只缘身在最高层。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="https://giscrazier.github.io/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/categories">静心阅读</a></li>
+                
+                    <li><a href="https://luuman.github.io/FrontEndGuideV2/FrontEndGuide/#/Index">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="mailto:yaoyinglong@hotmail.com" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/giscrazier" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/sky-gis" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/yaoyinglongv" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Maven-配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/17/Maven-配置/" class="article-date">
+      <time datetime="2017-12-17T15:18:43.000Z" itemprop="datePublished">2017-12-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Maven 配置
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/maven/">maven</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Maven 是一个软件项目管理工具，基于项目对象模型POM的概念。Maven可用来管理项目依赖、编译、文档等信息。</p>
+ <a id="more"></a>
+<h1 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a>Maven 配置</h1><p><img src="https://giscrazier.github.io/resoures/images/maven_cfg/m2_home.jpg" alt="M2_HOME"></p>
+<p><img src="https://giscrazier.github.io/resoures/images/maven_cfg/path.jpg" alt="path"></p>
+<h1 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h1><p><code>pom.xml</code>用来管理项目依赖以及项目的编译等功能。<br>主要关注：</p>
+<ul>
+<li>1.<code>dependencies</code><br>  是dependency的父元素。</li>
+<li>2.<code>dependency</code><br>  每一个代表一个依赖。由<code>groupId</code>（组织唯一标识，如一般来说这个通常和公司或组织关联，比如说，你所在的公司为mycom.那就应该定义为<code>com.mycom.mymaven</code>，<code>mymaven</code>为项目名称），<code>artifactId</code>(组织唯一标识，例如HelloMaven这个项目，我则把他定义为<code>hello-maven</code>，还例如spring项目，他的 <code>groupId</code>为<code>org.springframework</code>，对于content项目来说<code>artifactId</code>则为spring-content，web项 目则为spring-web)，<code>version</code>（项目版本）来唯一确定。</li>
+<li>3.变量定义<br>  <properties></properties>可以定义变量在dependency中引用：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring-framework-version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>4.编译插件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>wlfx-Maven01<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">source</span>&gt;</span>$&#123;java.version&#125;<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">target</span>&gt;</span>$&#123;java.version&#125;<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.Maven 运作方式<br>Maven最自动根据<code>dependency</code>中的依赖配置，直接通过互联网在Maven中心库下载相关依赖包到本地库。<br>若在Maven中心库中没有你需要的jar包（如Oracle），你需要通过下面的Maven命令打到Maven库后即可应用<br>Maven 安装 JAR 包的命令是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -Dfile=jar包的位置 -DgroupId=groupId -DartifactId=artifactId -Dversion=version -Dpackaging=jar</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如安装Oracle驱动到本地库：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.2.0 -Dpackaging=jar -Dfile=D:\ojdbc14.jar</span><br></pre></td></tr></table></figure></p>
+<h1 id="idea中创建Maven-Web项目"><a href="#idea中创建Maven-Web项目" class="headerlink" title="idea中创建Maven Web项目"></a>idea中创建Maven Web项目</h1><ul>
+<li>1.选择：</li>
+</ul>
+<p><img src="https://giscrazier.github.io/resoures/images/maven_cfg/archetype-webapp.jpg" alt="archetype-webapp"></p>
+<p>填写<code>groupId</code>，<code>artifactId</code>，<code>version</code>后生产工程。</p>
+<ul>
+<li>2.这个时候IDE还有缓存，需要在右侧Maven project中 刷新一下，加载pom中的配置(这步蛮重要的,我之前就是忘记点了,导致项目配置始终有问题)<br>注：以后在pom中添加jar的依赖后，都要点击maven project的刷新按钮 刷下缓存,如下图所示：</li>
+</ul>
+<p><img src="https://giscrazier.github.io/resoures/images/maven_cfg/refresh.jpg" alt="刷新"><br>这个时候Maven webapp项目就彻底创建好了  不需要再在project structure进行配置了。</p>
+<ul>
+<li>3.tomcat配置</li>
+<li>4.修改pom.xml。增加Spring的依赖，添加编译插件，将编译级别设置为1.7.<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span><span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.8.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.1.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>wlfx-Maven01<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">source</span>&gt;</span>$&#123;java.version&#125;<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">target</span>&gt;</span>$&#123;java.version&#125;<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/12/17/Maven-配置/">Maven 配置</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 浦深 的个人博客">浦深</a></p>
+        <p><span>发布时间:</span>2017年12月17日 - 23时18分</p>
+        <p><span>最后更新:</span>2017年12月18日 - 00时08分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/12/17/Maven-配置/" title="Maven 配置">http://yoursite.com/2017/12/17/Maven-配置/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/17/Maven-配置/　　作者: 浦深" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/12/23/D3-stacks/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          D3-stacks
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/14/利用PowerDesigner将表导入到数据库/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用PowerDesigner将表导入到数据库</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Maven-配置"><span class="toc-number">1.</span> <span class="toc-text">Maven 配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pom-xml"><span class="toc-number">2.</span> <span class="toc-text">pom.xml</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#idea中创建Maven-Web项目"><span class="toc-number">3.</span> <span class="toc-text">idea中创建Maven Web项目</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'giscrazier',
+      repo: 'giscrazier.github.io',
+      oauth: {
+        client_id: 'ba07027bd3a88b035f4e',
+        client_secret: 'b29acd991ccff9f186531239e81cd19fd4a0f5b5',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/12/23/D3-stacks/" title="上一篇: D3-stacks">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/12/14/利用PowerDesigner将表导入到数据库/" title="下一篇: 利用PowerDesigner将表导入到数据库">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/03/ArcGIS-For-JavaScript-小知识点篇/">ArcGIS For JavaScript 小知识点篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/03/arcgis-for-js-样式篇/">ArcGIS for JavaScript 样式篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/02/ArcGIS-for-JavaScript config篇/">ArcGIS-for-JavaScript config篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/自定义create-react-app-配置/">自定义create-react-app 配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/27/ArcGIS For JS notes for 4.7/">ArcGIS For JS notes for 4.7</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/01/JavaScript-属性描述符/">JavaScript 属性描述符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/28/ES6时代还需要学习原型链吗？/">ES6时代还需要学习原型链吗？</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/11/ES6-修饰器/">ES6 -修饰器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/06/CSS-居中/">CSS 居中</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/22/MyBatis笔记/">MyBatis笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/22/PostgreSQL学习手册/">PostgreSQL学习手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/19/PostgreSQL笔记/">postgresql笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/17/PostGis空间索引/">PostGis空间索引</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/17/arcgisserver-忘记manager用户名和密码修改方法/">arcgisserver 忘记manager用户名和密码修改方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/SQL中over用法大全/">SQL中over用法大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/15/ArcGIS-For-JS之二：与React集成/">ArcGIS For JS之二——与React集成</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/09/React-高阶组件/">React-高阶组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/04/获取代码样式/">获取代码样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/31/ArcGIS-for-JavaScript之一：概述/">ArcGIS for JavaScript --起步</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/23/D3-stacks/">D3-stacks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/17/Maven-配置/">Maven 配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/14/利用PowerDesigner将表导入到数据库/">利用PowerDesigner将表导入到数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/14/oralce-创建用户及分配表空间/">oralce 创建用户及分配表空间</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/13/hello-world/">hello world</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/12/webstorm-中配置supervisor或者nodemon来发布Node服务/">webstorm 中配置supervisor或者nodemon来发布Node服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/koa2-webpack-热更新/">koa2 + webpack 热更新</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/玩转-React-服务器端渲染/">玩转 React 服务器端渲染</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/03/JavaScript获取页面宽度高度大全/">JavaScript获取页面宽度高度大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/01/koa-router-学习笔记/">koa-router 学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/React-Router：从V2-V3迁移到V4/">React Router：从V2/V3迁移到V4</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/react-router4升级踩坑/">react-router4升级踩坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/Redux/">Redux</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/fecth-使用说明/">fecth 使用说明</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 浦深
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >登峰者数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        /*(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');*/
+	      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+		      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+		      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+	      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+	      _st('install','5P_GxzX1uzs-2gtMJ-qy','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
